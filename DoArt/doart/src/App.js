@@ -41,7 +41,7 @@ function App() {
         </aside>
         <main className="main">
           <div className="content">
-            <Route path="/paintings/:id" component={PaintScreen}/>
+            <Route path="/paint/:id" component={PaintScreen}/>
             <Route path="/" exact={true} component={HomeScreen}/>
            
           </div>
