@@ -43,7 +43,7 @@ export default {
     {
         _id: '6', 
         name: 'Beach',
-        images: '/images/playa (1).jpg',
+        images: '/images/beach.jpg',
         price: 55,
         category: 'Nature',
         bestseller: true

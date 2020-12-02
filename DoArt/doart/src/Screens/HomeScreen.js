@@ -20,8 +20,8 @@ function HomeScreen(props) {
 
     return <ul className="paintings">
         {
-            paintings.map(paint =>
-                <li>
+             paintings.map(paint =>
+                <li key={paint._id}>
                     <div className="paint">
                         <Link to={'/paint/' + paint._id}>
                          <img className="paint-image" src={paint.images} alt="paint1" />
