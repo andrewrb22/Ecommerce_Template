@@ -2,8 +2,8 @@
 import React from 'react';
 import './App.css';
 
-import HomeScreen from '../src/Screens/HomeScreen';
-import PaintScreen from '../src/Screens/PaintScreen'
+import HomeScreen from './screens/HomeScreen';
+import PaintScreen from './screens/PaintScreen'
 import {BrowserRouter,Route, Link} from 'react-router-dom'
 
 function App() {

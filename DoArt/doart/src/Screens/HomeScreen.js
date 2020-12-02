@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import{listPaintings} from '../actions/paintActions'
 
-import axios from 'axios';
+
 
 function HomeScreen(props) {
 
-    const [paintings, setpaint] = useState([]);
-    
+   
+    const paintList = useSelector(state => state.paintList);
+    const { paintings, loading, error} = paintList;
+    const dispatch = useDispatch();
     useEffect(() => {
-        const fetchData = async () =>{
-            const {data} = await axios.get("/api/paint");
-            setpaint(data);
-        }
-        fetchData();
+     dispatch(listPaintings());
         return () => {
             
         };
     }, [])
 
-    return <ul className="paintings">
+    return loading ? <div>Loading...</div>:
+error? <div>{error}</div>:
+    <ul className="paintings">
         {
              paintings.map(paint =>
                 <li key={paint._id}>
