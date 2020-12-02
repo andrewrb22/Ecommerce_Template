@@ -19,7 +19,7 @@ const listPaintings = () => async (dispatch) => {
 const detailsPaint = (paintId) => async (dispatch) => {
     try {
         dispatch({ type: PAINT_DETAILS_REQUEST, payload: paintId });
-        const { data } = await axios.get("/api/paint" + paintId);
+        const { data } = await axios.get('/api/paint/' + paintId);
         dispatch({ type: PAINT_DETAILS_SUCCESS, payload: data });
     } catch (error) {
         dispatch({ type: PAINT_DETAILS_FAIL, payload: error.message })

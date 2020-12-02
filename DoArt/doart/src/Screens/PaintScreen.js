@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { detailsPaint } from '../actions/paintActions';
 
 
 function PaintScreen(props) {
-
+    const [qty, setQty] = useState(1);
+    const [original, setOriginal] = useState(0);
     const paintDetails = useSelector(state => state.paintDetails);
     const { paint, loading, error } = paintDetails;
     const dispatch = useDispatch();
@@ -14,9 +15,13 @@ function PaintScreen(props) {
     useEffect(() => {
         dispatch(detailsPaint(props.match.params.id));
         return () => {
-          //
+            //
         };
-    }, [] )
+    }, [])
+
+    const handleAddToCart = () => {
+        props.history.push("/cart" + props.match.params.id + "?qty" + qty)
+    }
 
     return <div>
         <div className="backtohome">
@@ -35,7 +40,8 @@ function PaintScreen(props) {
                                 <h4>Name: {paint.name}</h4>
                             </li>
                             <li> Collection:
-                        {paint.category}
+                                
+                              {paint.category}
                             </li>
                             <li className="bestseller"> BestSeller
                         {paint.bestseller}
@@ -51,17 +57,25 @@ function PaintScreen(props) {
                                 Price: <b>${paint.price} </b>
                             </li>
                             <li>
-                                Status: {paint.status}
+                                Status: {paint.posterQty > 0 ? "In Stock" : "Out Of Stock"}
                             </li>
                             <li>
-                                Type: <select>
-                                    <option>Poster</option>
-                                    <option>Cards(4X6)</option>
-                                    <option>Sticker</option>
+                                Posters Qty: <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                                    {[...Array(paint.posterQty).keys()].map(x =>
+                                        <option key={x + 1} value={x + 1}>{x + 1}</option>)}
                                 </select>
                             </li>
                             <li>
-                                <button className="button">Add to Cart</button>
+                                Original: <select value={original} onChange={(e) => setOriginal(e.target.value)}>
+                                    {[...Array(paint.original).keys()].map(x =>
+                                        <option key={x + 1} value={x + 1}>{x + 1}</option>)}
+                                </select>
+                            </li>
+                            <li>
+                                {paint.posterQty > 0 ? <button onClick={handleAddToCart} className="button">Add to Cart</button>
+                                    :
+                                    <div>Out Of Stock</div>}
+
                             </li>
 
                         </ul>

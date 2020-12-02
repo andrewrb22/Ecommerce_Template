@@ -6,6 +6,8 @@ export default {
         images: '/images/eyes.jpg',
         price: 55,
         category: 'Portrait',
+        original: 1,
+        posterQty:4,
         bestseller: true
     },
     {
@@ -14,6 +16,8 @@ export default {
         images: '/images/dogo3.jpg',
         price: 55,
         category: 'Pets',
+        original: 0,
+        posterQty:3,
         bestseller: false
     },
     {
@@ -22,6 +26,8 @@ export default {
         images: '/images/dogo1.jpg',
         price: 55,
         category: 'Pets',
+        original: 0,
+        posterQty:4,
         bestseller: true
     },
     {
@@ -30,6 +36,8 @@ export default {
         images: '/images/dogo2.jpg',
         price: 55,
         category: 'Pets',
+        original: 0,
+        posterQty:4,
         bestseller: false
     },
     {
@@ -38,6 +46,8 @@ export default {
         images: '/images/gatos.jpg',
         price: 55,
         category: 'Pets',
+        original: 0,
+        posterQty:4,
         bestseller: true
     },
     {
@@ -46,6 +56,8 @@ export default {
         images: '/images/beach.jpg',
         price: 55,
         category: 'Nature',
+        original: 1,
+        posterQty:4,
         bestseller: true
     },
    
