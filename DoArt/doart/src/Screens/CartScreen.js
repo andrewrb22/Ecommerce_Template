@@ -23,7 +23,7 @@ function CartScreen(props) {
 
     return <div className="cart">
         <div className="cart-lsit">
-            <ul className="cart-list-container">
+            <ul className="cart-list-container" key={paintId}>
                 <li>
                     <h3>
                         Shopping Cart
@@ -41,7 +41,7 @@ function CartScreen(props) {
                         :
                         cartItems.map(item =>
                             <div>
-                               <img src={item.images} alt="paint"></img>
+                                <img src={item.images} alt="paint"></img>
                                 <div className="cart-name">
                                     <div>
                                         {item.name}
@@ -69,9 +69,16 @@ function CartScreen(props) {
 
         </div>
         <div className="cart-action">
-
+        <h3>
+        Subtotal ( {cartItems.reduce((a, c) => a + c.qty, 0)} items)
+        :
+         $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+      </h3>
+      <button  className="button primary " disabled={cartItems.length === 0}>
+        Proceed to Checkout
+      </button>
         </div>
-        Cart Screen
+
     </div>
 }
 export default CartScreen
