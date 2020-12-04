@@ -1,23 +1,25 @@
-import React from 'react'
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {addToCart} from '../actions/cartActions';
+import { addToCart } from '../actions/cartActions';
 
 function CartScreen(props) {
 
-const cart = useSelector(state => state.cart);
+    const cart = useSelector(state => state.cart);
 
-const {cartItems} = cart;
+    const { cartItems } = cart;
 
     const paintId = props.match.params.id;
     const qty = props.location.search ? Number(props.location.search.split("=")[1]) : 1;
     const dispatch = useDispatch();
 
     useEffect(() => {
+
         if (paintId) {
-          dispatch(addToCart(paintId, qty));
+
+            dispatch(addToCart(paintId, qty));
+
         }
-      }, []);
+    }, [])
 
     return <div className="cart">
         <div className="cart-lsit">
@@ -39,7 +41,7 @@ const {cartItems} = cart;
                         :
                         cartItems.map(item =>
                             <div>
-                                <img scr={item.images} alt="paint" />
+                               <img src={item.images} alt="paint"></img>
                                 <div className="cart-name">
                                     <div>
                                         {item.name}
