@@ -25,6 +25,10 @@ function CartScreen(props) {
         }
     }, [])
 
+    const checkoutHandler = () => {
+        props.history.push("/signin?redirect=shipping");
+    }
+
     return <div className="cart">
         <div className="cart-lsit">
             <ul className="cart-list-container" key={paintId}>
@@ -63,7 +67,7 @@ function CartScreen(props) {
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                         </select>
-                                        <button type="button" className="button" onClick={() =>removeFromCartHandler (item.paint)}>
+                                        <button type="button"className="button" onClick={() =>removeFromCartHandler (item.paint)}>
                                             Delete
                                         </button>
                                     </div>
@@ -87,7 +91,7 @@ function CartScreen(props) {
         :
          $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
             </h3>
-            <button className="button primary " disabled={cartItems.length === 0}>
+            <button onClick={checkoutHandler}  className="button primary full-width " disabled={cartItems.length === 0}>
                 Proceed to Checkout
       </button>
         </div>
