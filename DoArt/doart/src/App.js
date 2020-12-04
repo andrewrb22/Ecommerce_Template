@@ -42,7 +42,7 @@ function App() {
         <main className="main">
           <div className="content">
             <Route path="/paint/:id" component={PaintScreen}/>
-            <Route path="/cart/id:?" component={CartScreen}/>
+            <Route path="/cart/:id?" component={CartScreen}/>
             <Route path="/" exact={true} component={HomeScreen}/>
            
           </div>

@@ -1,27 +1,32 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import  addToCart  from '../actions/cartActions';
+import {addToCart} from '../actions/cartActions';
+
 function CartScreen(props) {
 
 const cart = useSelector(state => state.cart);
+
 const {cartItems} = cart;
 
     const paintId = props.match.params.id;
-    const qty = props.location.search ? Number(props.location.seacrh.split("=")[1]) : 1;
+    const qty = props.location.search ? Number(props.location.search.split("=")[1]) : 1;
     const dispatch = useDispatch();
 
     useEffect(() => {
         if (paintId) {
-            dispatch(addToCart(paintId, qty));
+          dispatch(addToCart(paintId, qty));
         }
-    }, [])
+      }, []);
 
     return <div className="cart">
         <div className="cart-lsit">
             <ul className="cart-list-container">
                 <li>
-                    <h3>Shopping Cart</h3>
+                    <h3>
+                        Shopping Cart
+
+                    </h3>
                     <div>
                         Price
                 </div>

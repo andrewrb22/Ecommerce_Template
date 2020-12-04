@@ -19,4 +19,4 @@ function cartReducer(state = { cartItems: [] }, action) {
     }
 }
 
-export default cartReducer;
+export  {cartReducer};
