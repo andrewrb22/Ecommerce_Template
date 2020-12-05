@@ -192,3 +192,13 @@ a:hover{
 .button.primary{
   background-color: rgb(44, 136, 136);
 }
+
+/*form*/
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+}
