@@ -192,6 +192,9 @@ a:hover{
 .button.primary{
   background-color: rgb(44, 136, 136);
 }
+.button.secondary{
+  background-color: #f0f0f0;
+}
 
 /*form*/
 
