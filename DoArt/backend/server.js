@@ -2,7 +2,8 @@ import express from 'express';
 import data from '../backend/data.js';
 import config from './config.js';
 import mongoose from 'mongoose';
-import userRoute from './routes/userRoute.js'
+import userRoute from './routes/userRoute.js';
+import bodyParser from 'body-parser'
 
 import dotenv from 'dotenv';
 
@@ -20,6 +21,7 @@ mongoose.connect(mongodbUrl ,{
 
 
 const app = express();
+app.use(bodyParser.json());
 
 app.use("/api/users", userRoute);
 
