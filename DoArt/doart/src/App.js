@@ -7,6 +7,7 @@ import PaintScreen from './screens/PaintScreen'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import SigninScreen from './screens/SigninScreen';
 import { useSelector } from 'react-redux';
+import RegisterScreen from './screens/RegisterScreen';
 
 function App() {
 
@@ -51,7 +52,8 @@ function App() {
         <main className="main">
           <div className="content">
             <Route path="/paint/:id" component={PaintScreen} />
-            <Route path="/Signin" component={SigninScreen}></Route>
+            <Route path="/signin" component={SigninScreen}></Route>
+            <Route path="/register" component={RegisterScreen}></Route>
             <Route path="/cart/:id?" component={CartScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
 
