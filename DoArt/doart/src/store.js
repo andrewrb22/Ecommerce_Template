@@ -6,7 +6,8 @@ import {paintListReducer, paintDetailsReducer} from './reducers/paintReducers'
 import { userSigninReducer } from './reducers/userReducer.js';
 
 const cartItems = cookie.getJSON("cartItems") || [];
-const initialState= {cart: {cartItems}}
+const userInfo = cookie.getJSON("userInfo") || null;
+const initialState= {cart: {cartItems}, userSignin: {userInfo}}
 const reducer= combineReducers({
     paintList: paintListReducer,
     paintDetails: paintDetailsReducer,

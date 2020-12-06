@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {signin} from '../actions/userActions.js';
-
+import { useHistory } from "react-router-dom";
 
 function SigninScreen(props) {
 
@@ -11,15 +11,20 @@ function SigninScreen(props) {
     const userSignin = useSelector(state => state.userSignin);
     const { loading, userInfo, error } = userSignin;
     const dispatch = useDispatch();
-    const redirect = props.location.search ? props.location.search.split("=")[1] : "/";
+    const history = useHistory();
+   
     useEffect(() => {
       if (userInfo) {
-        props.history.push(redirect);
+        history.push("/");
       }
       return () => {
         //
       };
     }, [userInfo]);
+
+   
+
+  
   
 
     const submitHandler = (e) => {
@@ -51,7 +56,7 @@ function SigninScreen(props) {
                     </input>
                 </li>
                 <li>
-                    <button type="submit" className="button primary">Signin</button>
+                    <button type="submit"  className="button primary">Signin</button>
                 </li>
                 <li>
                     New to DoArt?
