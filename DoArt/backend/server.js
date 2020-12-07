@@ -3,6 +3,7 @@ import data from '../backend/data.js';
 import config from './config.js';
 import mongoose from 'mongoose';
 import userRoute from './routes/userRoute.js';
+import paintRoute from './routes/paintRoute.js';
 import bodyParser from 'body-parser'
 
 import dotenv from 'dotenv';
@@ -24,20 +25,21 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use("/api/users", userRoute);
+app.use("/api/paintings", paintRoute);
 
-app.get("/api/paint/:id", (req,res) =>{
-    const paintId = req.params.id;
-    const paint = data.paintings.find(x => x._id === paintId);
-    if (paint) 
-        res.send(paint);
-        else
-        res.status(404).send({msg: "Paint Not Found."})
+// app.get("/api/paint/:id", (req,res) =>{
+//     const paintId = req.params.id;
+//     const paint = data.paintings.find(x => x._id === paintId);
+//     if (paint) 
+//         res.send(paint);
+//         else
+//         res.status(404).send({msg: "Paint Not Found."})
     
     
-});
+// });
 
-app.get("/api/paint", (req,res) =>{
-    res.send(data.paintings);
-})
+// app.get("/api/paint", (req,res) =>{
+//     res.send(data.paintings);
+// })
 
 app.listen(5000, () => {console.log("Server started at http://localhost:5000") })
