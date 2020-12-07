@@ -5,7 +5,7 @@ function paintListReducer(state = { paintings: [] }, action) {
 
     switch (action.type) {
         case PAINT_LIST_REQUEST:
-            return { loading: true };
+            return { loading: true, paintings: [], };
         case PAINT_LIST_SUCCESS:
             return { loading: false, paintings: action.payload };
         case PAINT_LIST_FAIL:

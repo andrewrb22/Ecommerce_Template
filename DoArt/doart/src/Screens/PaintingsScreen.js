@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { savePaint } from '../actions/paintActions.js';
+import { listPaintings, savePaint } from '../actions/paintActions.js';
 
 function PaintingsScreen(props) {
 
@@ -11,13 +11,15 @@ function PaintingsScreen(props) {
     const [description, setDescription] = useState('');
     const [original, setOriginal] = useState('');
     const [posterQty, setPosterQty] = useState('');
+    const paintList = useSelector(state => state.paintList);
+    const {loading , paintings, error} = paintList;
     const paintSave = useSelector(state => state.paintSave);
     const { loading: laodingSave, success: successSave, error: errorSave } = paintSave;
     const dispatch = useDispatch();
    
    
     useEffect(() => {
-    
+    dispatch(listPaintings());
       return () => {
         //
       };
@@ -34,7 +36,13 @@ function PaintingsScreen(props) {
 
 
     }
-    return <div className="form">
+    return <div className="content content-margined">
+<div className="product-header">
+    <h3> Paintingis</h3>
+    <button>Create New Painting</button>
+</div>
+ 
+<div className="form">
         <form onSubmit={submitHandler} >
             <ul className="form-container">
                 <li>
@@ -99,6 +107,42 @@ function PaintingsScreen(props) {
                
             </ul>
         </form>
+    </div>
+<div className="paint-list">
+
+    <table>
+        <thead>
+           <tr>
+           <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Action</th>
+           </tr>
+        </thead>
+        <tbody>
+{paintings.map(paint =>(
+      <tr>
+      <td>{paint._id}</td>
+      <td>{paint.name}</td>
+<td>{paint.price}</td>
+<td>{paint.category}</td>
+<td>
+    <button>Edit</button>
+    <button>Delete</button>
+</td>
+
+      </tr>
+))}
+  
+
+          
+        </tbody>
+    </table>
+</div>
+   
+    
+   
     </div>
 }
 export default PaintingsScreen;
