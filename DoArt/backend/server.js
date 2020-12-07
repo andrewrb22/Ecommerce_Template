@@ -25,7 +25,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use("/api/users", userRoute);
-app.use("/api/paintings", paintRoute);
+app.use("/api/paint", paintRoute);
 
 // app.get("/api/paint/:id", (req,res) =>{
 //     const paintId = req.params.id;
