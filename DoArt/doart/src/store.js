@@ -14,7 +14,7 @@ const reducer= combineReducers({
     cart: cartReducer,
     userSignin: userSigninReducer,
     userRegister: userRegisterReducer,
-paintSave: paintSaveReducer,
+    paintSave: paintSaveReducer,
 
 })
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

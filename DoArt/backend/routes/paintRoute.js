@@ -3,11 +3,14 @@ import Paint from '../models/paintModel.js';
 
 
 const router = express.Router();
+// get back list of paintings
 
 router.get("/", async (req,res) =>{
     const paintings = await Paint.find({});
     res.send(paintings);
 });
+
+// post the list of paintigs
  router.post("/", async(req, res) => {
    const paint = new Paint ({
      name: req.body.name,

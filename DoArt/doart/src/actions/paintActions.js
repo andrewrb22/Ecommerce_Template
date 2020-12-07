@@ -19,7 +19,7 @@ const savePaint = (paint) => async(dispatch, getState) =>{
     try {
         dispatch({ type: PAINT_SAVE_REQUEST, payload: paint});
        const {userSignin: {userInfo}} = getState();
-        const {data} = await axios.post("/api/paint", paint, {headers:{
+        const {data} = await axios.post("/api/paintings", paint, {headers:{
             'Authorization':'Bearer' + userInfo.token
         }
     });
