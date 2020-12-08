@@ -27,11 +27,14 @@ function PaintingsScreen(props) {
 
 
     useEffect(() => {
+        if(successSave){
+            setModalVisible(false)
+        }
         dispatch(listPaintings());
         return () => {
             //
         };
-    }, []);
+    }, [successSave]);
 
     const openModal = (paint) => {
         setModalVisible(true);
