@@ -21,12 +21,21 @@ const savePaint = (paint) => async(dispatch, getState) =>{
        const {
            userSignin: {userInfo},
         } = getState();
+        if(!paint._id){
         const {data} = await axios.post("/api/paint", paint,
          {headers:{
             'Authorization':'Bearer' + userInfo.token,
         },
     });
     dispatch({type: PAINT_SAVE_SUCCESS, payload: data});
+}else{
+    const {data} = await axios.put("/api/paint/" + paint._id, paint,
+    {headers:{
+       'Authorization':'Bearer' + userInfo.token,
+   },
+});
+dispatch({type: PAINT_SAVE_SUCCESS, payload: data});
+};
     } catch (error) {
         dispatch({type: PAINT_SAVE_FAIL, payload: error.message});
     }

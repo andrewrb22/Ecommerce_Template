@@ -26,6 +26,27 @@ router.get("/", async (req,res) =>{
       return res.status(201).send({message: 'New Paint Created', data: newPaint});
    }
    return res.status(500).send({ message: 'Error to create Paint'});
- })
+ });
+
+
+ router.put("/:id", async(req, res) => {
+   const paintId = req.params.id;
+   const paint = await Paint.findById(paintId);
+   if(paint){
+   
+      paint.name = req.body.name;
+      paint.price = req.body.price;
+      paint.images = req.body.images;
+      paint.category = req.body.category;
+      paint.original = req.body.original;
+      paint.posterQty = req.body.posterQty;
+      paint.description = req.body.description;
+      const updatedPaint = await paint.save();
+  if(updatedPaint){
+     return res.status(200).send({message: 'Paint Updated', data: updatedPaint});
+  }
+   }
+   return res.status(500).send({ message: 'Error to updating Paint'});
+})
   
   export default router;

@@ -7,15 +7,22 @@ function PaintingsScreen(props) {
     const [name, setName] = useState('');
     const [id, setId] = useState('');
     const [price, setPrice] = useState('');
-    const [image, setImage] = useState('');
+    const [images, setImage] = useState('');
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
     const [original, setOriginal] = useState('');
     const [posterQty, setPosterQty] = useState('');
     const paintList = useSelector(state => state.paintList);
     const { loading, paintings, error } = paintList;
+
+
     const paintSave = useSelector(state => state.paintSave);
-    const { loading: laodingSave, success: successSave, error: errorSave } = paintSave;
+    const {
+         loading: laodingSave,
+          success: successSave,
+           error: errorSave,
+         } = paintSave;
+         
     const dispatch = useDispatch();
 
 
@@ -31,7 +38,7 @@ function PaintingsScreen(props) {
         setId(paint._id);
         setName(paint.name);
         setPrice(paint.price);
-        setImage(paint.image);
+        setImage(paint.images);
         setCategory(paint.category);
         setOriginal(paint.original);
         setPosterQty(paint.posterQty);
@@ -46,7 +53,7 @@ function PaintingsScreen(props) {
         e.preventDefault();
         dispatch(savePaint({
             _id: id,
-            name, price, image, category, original, posterQty, description
+            name, price, images, category, original, posterQty, description
         }));
 
 
@@ -91,7 +98,7 @@ function PaintingsScreen(props) {
                                 <label htmlFor="image">
                                     Image
           </label>
-                                <input type="text" name="image" id="image" value={image} onChange={(e) => setImage(e.target.value)}>
+                                <input type="text" name="image" id="image" value={images} onChange={(e) => setImage(e.target.value)}>
                                 </input>
                             </li>
                             <li>
@@ -155,7 +162,7 @@ function PaintingsScreen(props) {
                                 <td>{paint.category}</td>
                                 <td>
                                     <button className="button" onClick={() => openModal(paint)}>Edit</button>
-                                    <button>Delete</button>
+                                    <button className="button">Delete</button>
                                 </td>
 
                             </tr>
