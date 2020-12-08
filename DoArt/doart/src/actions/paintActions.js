@@ -18,10 +18,13 @@ const listPaintings = () => async (dispatch) => {
 const savePaint = (paint) => async(dispatch, getState) =>{
     try {
         dispatch({ type: PAINT_SAVE_REQUEST, payload: paint});
-       const {userSignin: {userInfo}} = getState();
-        const {data} = await axios.post("/api/paint", paint, {headers:{
-            'Authorization':'Bearer' + userInfo.token
-        }
+       const {
+           userSignin: {userInfo},
+        } = getState();
+        const {data} = await axios.post("/api/paint", paint,
+         {headers:{
+            'Authorization':'Bearer' + userInfo.token,
+        },
     });
     dispatch({type: PAINT_SAVE_SUCCESS, payload: data});
     } catch (error) {
