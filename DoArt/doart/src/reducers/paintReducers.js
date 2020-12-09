@@ -1,5 +1,5 @@
 import { PAINT_LIST_FAIL, PAINT_LIST_REQUEST, PAINT_LIST_SUCCESS,
-     PAINT_DETAILS_REQUEST,PAINT_DETAILS_SUCCESS,PAINT_DETAILS_FAIL, PAINT_SAVE_REQUEST, PAINT_SAVE_SUCCESS, PAINT_SAVE_FAIL} from "../constants/paintConstants";
+     PAINT_DETAILS_REQUEST,PAINT_DETAILS_SUCCESS,PAINT_DETAILS_FAIL, PAINT_SAVE_REQUEST, PAINT_SAVE_SUCCESS, PAINT_SAVE_FAIL, PAINT_DELETE_FAIL, PAINT_DELETE_SUCCESS, PAINT_DELETE_REQUEST} from "../constants/paintConstants";
 
 function paintListReducer(state = { paintings: [] }, action) {
 
@@ -26,7 +26,20 @@ function paintDetailsReducer(state = { paint: {} }, action) {
             default:
                 return state;
     }
-}
+};
+function paintDeleteReducer(state = { paint: {} }, action) {
+
+    switch (action.type) {
+        case PAINT_DELETE_REQUEST:
+            return { loading: true };
+        case PAINT_DELETE_SUCCESS:
+            return { loading: false, paint: action.payload , success: true};
+        case PAINT_DELETE_FAIL:
+            return { loading: false, error: action.payload };
+            default:
+                return state;
+    }
+};
 function paintSaveReducer(state = { paint: {} }, action) {
 
     switch (action.type) {
@@ -40,4 +53,4 @@ function paintSaveReducer(state = { paint: {} }, action) {
                 return state;
     }
 }
-export { paintListReducer , paintDetailsReducer, paintSaveReducer}
+export { paintListReducer , paintDetailsReducer, paintSaveReducer,paintDeleteReducer}

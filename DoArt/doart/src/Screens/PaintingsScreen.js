@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listPaintings, savePaint } from '../actions/paintActions.js';
+import { listPaintings, savePaint, deletePaint } from '../actions/paintActions.js';
 
 function PaintingsScreen(props) {
     const [modalVisible, setModalVisible] = useState(false);
@@ -17,12 +17,18 @@ function PaintingsScreen(props) {
 
 
     const paintSave = useSelector(state => state.paintSave);
+    
     const {
          loading: laodingSave,
           success: successSave,
            error: errorSave,
          } = paintSave;
-         
+         const paintDelete = useSelector(state => state.paintDelete); 
+         const {
+            loading: laodingDelete,
+             success: successDelete,
+              error: errorDelete,
+            } = paintDelete;
     const dispatch = useDispatch();
 
 
@@ -34,7 +40,7 @@ function PaintingsScreen(props) {
         return () => {
             //
         };
-    }, [successSave]);
+    }, [successSave, successDelete]);
 
     const openModal = (paint) => {
         setModalVisible(true);
@@ -61,6 +67,9 @@ function PaintingsScreen(props) {
 
 
     };
+    const deleteHandler = (paint) => {
+        dispatch(deletePaint(paint._id))
+    }
 
     return (
         <div className="content content-margined">
@@ -101,7 +110,7 @@ function PaintingsScreen(props) {
                                 <label htmlFor="image">
                                     Image
           </label>
-                                <input type="text" name="image" id="image" value={images} onChange={(e) => setImage(e.target.value)}>
+                                <input type="text" name="images" id="image" value={images} onChange={(e) => setImage(e.target.value)}>
                                 </input>
                             </li>
                             <li>
@@ -165,7 +174,7 @@ function PaintingsScreen(props) {
                                 <td>{paint.category}</td>
                                 <td>
                                     <button className="button" onClick={() => openModal(paint)}>Edit</button>
-                                    <button className="button">Delete</button>
+                                    <button className="button"  onClick={() => deleteHandler(paint)} >Delete</button>
                                 </td>
 
                             </tr>

@@ -24,11 +24,23 @@ router.put("/:id", async (req, res) => {
      paint.description = req.body.description;
      const updatedPaint = await paint.save();
  if(updatedPaint){
-    return res.status(200).send({message: 'Paint Updated', data: updatedPaint});
+    return res
+    .status(200)
+    .send({message: 'Paint Updated', data: updatedPaint});
  }
   }
   return res.status(500).send({ message: 'Error to updating Paint'});
 })
+
+router.delete('/:id', async (req, res) => {
+  const deletedPaint = await Paint.findById(req.params.id);
+  if (deletedPaint) {
+    await deletedPaint.remove();
+    res.send({ message: 'Paint Deleted' });
+  } else {
+    res.send('Error in Deletion.');
+  }
+});
 
 // post the list of paintigs
  router.post("/", async(req, res) => {
