@@ -1,5 +1,6 @@
 import express from 'express';
 import Paint from '../models/paintModel.js';
+import {isAuth, isAdmin} from '../utils.js'
 
 
 const router = express.Router();
@@ -10,7 +11,7 @@ router.get("/", async (req,res) =>{
     res.send(paintings);
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", isAuth, isAdmin, async (req, res) => {
   const paintId = req.params.id;
   const paint = await Paint.findById(paintId);
   if(paint){
@@ -32,7 +33,7 @@ router.put("/:id", async (req, res) => {
   return res.status(500).send({ message: 'Error to updating Paint'});
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', isAuth, isAdmin, async (req, res) => {
   const deletedPaint = await Paint.findById(req.params.id);
   if (deletedPaint) {
     await deletedPaint.remove();
@@ -43,7 +44,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 // post the list of paintigs
- router.post("/", async(req, res) => {
+ router.post("/", isAuth, isAdmin, async(req, res) => {
    const paint = new Paint ({
      name: req.body.name,
      price: req.body.price,

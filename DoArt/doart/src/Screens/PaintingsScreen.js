@@ -75,7 +75,7 @@ function PaintingsScreen(props) {
         <div className="content content-margined">
             <div className="product-header">
                 <h3> Paintings</h3>
-                <button onClick={() => openModal({})}>
+                <button className="button primary" onClick={() => openModal({})}>
                     Create New Painting
         </button>
             </div>
@@ -92,6 +92,7 @@ function PaintingsScreen(props) {
                                 {laodingSave && <div> Loading...</div>}
                                 {errorSave && <div> {errorSave}</div>}
                             </li>
+                            {" "}
                             <li>
                                 <label htmlFor="name">
                                     Name
@@ -155,7 +156,7 @@ function PaintingsScreen(props) {
 
             <div className="paint-list">
 
-                <table>
+                <table className="table">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -174,6 +175,7 @@ function PaintingsScreen(props) {
                                 <td>{paint.category}</td>
                                 <td>
                                     <button className="button" onClick={() => openModal(paint)}>Edit</button>
+                                    {" "}
                                     <button className="button"  onClick={() => deleteHandler(paint)} >Delete</button>
                                 </td>
 
