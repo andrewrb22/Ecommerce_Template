@@ -11,6 +11,17 @@ router.get("/", async (req,res) =>{
     res.send(paintings);
 });
 
+router.get("/:id", async (req,res) =>{
+  const paint = await Paint.findOne({_id: req.params.id});
+  if(paint){
+    res.send(paint)
+  }else{
+    res.status(404).send({message: "Paint Not Found"})
+  }
+  res.send(paint);
+});
+
+
 router.put("/:id", isAuth, isAdmin, async (req, res) => {
   const paintId = req.params.id;
   const paint = await Paint.findById(paintId);
