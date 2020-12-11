@@ -31,7 +31,7 @@ const savePaint = (paint) => async (dispatch, getState) => {
         dispatch({ type: PAINT_SAVE_SUCCESS, payload: data });
       } else {
         const { data } = await axios.put(
-          '/api/paint/' + paint,
+          '/api/paint/' + paint._id,
           paint,
           {
             headers: {

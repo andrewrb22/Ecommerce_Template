@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const paintSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  images: { type: String, required: true },
+  images: { type: String, required: false },
   price: { type: Number,default:0, required: true },
 
   category: { type: String, required: true },
