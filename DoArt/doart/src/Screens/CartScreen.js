@@ -56,18 +56,18 @@ function CartScreen(props) {
                                 <div className="cart-name">
                                     <div>
                                         <Link to={"/paint/" + item.paint}>
-                                        {item.name}
+                                            {item.name}
                                         </Link>
-                                        
+
                                     </div>
                                     <div>
                                         Qty:
-                                <select value={item.qty} onChange= {(e) => dispatch(addToCart(item.paint, e.target.value)) }>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
+                                        <select value={item.qty} onChange={(e) => dispatch(addToCart(item.paint, e.target.value))}>
+                                            {[...Array(item.Qty).keys()].map(x =>
+                                                <option key={x + 1} value={x + 1}>{x + 1}</option>
+                                            )}
                                         </select>
-                                        <button type="button"className="button" onClick={() =>removeFromCartHandler (item.paint)}>
+                                        <button type="button" className="button" onClick={() => removeFromCartHandler(item.paint)}>
                                             Delete
                                         </button>
                                     </div>
@@ -91,7 +91,7 @@ function CartScreen(props) {
         :
          $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
             </h3>
-            <button onClick={checkoutHandler}  className="button primary full-width " disabled={cartItems.length === 0}>
+            <button onClick={checkoutHandler} className="button primary full-width " disabled={cartItems.length === 0}>
                 Proceed to Checkout
       </button>
         </div>

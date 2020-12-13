@@ -61,15 +61,25 @@ function PaintScreen(props) {
                             </li>
                             <li>
                                 Posters Qty:{''}
-                                 <select value={qty} onChange={(e) => setQty(e.target.value)}>
-                                    {[...Array(paint.Qty).keys()].map(x =>
-                                        <option key={x + 1} value={x + 1}>{x + 1}</option>)}
+                                 <select 
+                                 value={qty}
+                                  onChange={(e) => {setQty(e.target.value)}}>
+                                    {[...Array(paint.Qty).keys()].map((x) => (
+                                        <option key={x + 1} value={x + 1}>
+                                            {x + 1}
+                                            </option>
+                                            ))}
                                 </select>
                             </li>
                             <li>
-                                {paint.Qty > 0 ? <button onClick={handleAddToCart} className="button">Add to Cart</button>
-                                    :
-                                    <div>Out Of Stock</div>}
+                                {paint.Qty > 0 && ( 
+                                <button 
+                                onClick={handleAddToCart}
+                                 className="button primery"
+                                 >Add to Cart
+                                 </button>
+                                    
+                                   )}
 
                             </li>
 
