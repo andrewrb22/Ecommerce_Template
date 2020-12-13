@@ -31,8 +31,7 @@ router.put("/:id", isAuth, isAdmin, async (req, res) => {
      paint.price = req.body.price;
      paint.images = req.body.images;
      paint.category = req.body.category;
-     paint.original = req.body.original;
-     paint.posterQty = req.body.posterQty;
+     paint.Qty = req.body.Qty;
      paint.description = req.body.description;
      const updatedPaint = await paint.save();
  if(updatedPaint){
@@ -61,8 +60,7 @@ router.delete('/:id', isAuth, isAdmin, async (req, res) => {
      price: req.body.price,
      image: req.body.image,
      category: req.body.category,
-     original: req.body.original,
-     postQty: req.body.posterQty,
+     Qty: req.body.Qty,
      description: req.body.description,
    });
    const newPaint = await paint.save();
