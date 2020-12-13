@@ -6,7 +6,6 @@ import { detailsPaint } from '../actions/paintActions';
 
 function PaintScreen(props) {
     const [qty, setQty] = useState(1);
-    const [original, setOriginal] = useState(1);
     const paintDetails = useSelector(state => state.paintDetails);
     const { paint, loading, error } = paintDetails;
     const dispatch = useDispatch();
@@ -58,24 +57,17 @@ function PaintScreen(props) {
                             </li>
                             <li>
                                 Status:{" "}
-                                 {paint.posterQty > 0 ? "In Stock" : "Out Of Stock"}
+                                 {paint.Qty > 0 ? "In Stock" : "Out Of Stock"}
                             </li>
                             <li>
                                 Posters Qty:{''}
                                  <select value={qty} onChange={(e) => setQty(e.target.value)}>
-                                    {[...Array(paint.posterQty).keys()].map(x =>
+                                    {[...Array(paint.Qty).keys()].map(x =>
                                         <option key={x + 1} value={x + 1}>{x + 1}</option>)}
                                 </select>
                             </li>
                             <li>
-                                Original:{''}
-                                 <select value={original} onChange={(e) => setOriginal(e.target.value)}>
-                                    {[...Array(paint.original).keys()].map(x =>
-                                        <option key={x + 1} value={x + 1}>{x + 1}</option>)}
-                                </select>
-                            </li>
-                            <li>
-                                {paint.posterQty > 0 ? <button onClick={handleAddToCart} className="button">Add to Cart</button>
+                                {paint.Qty > 0 ? <button onClick={handleAddToCart} className="button">Add to Cart</button>
                                     :
                                     <div>Out Of Stock</div>}
 

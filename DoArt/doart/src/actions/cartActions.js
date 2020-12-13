@@ -14,7 +14,7 @@ const addToCart = (paintId, qty) => async (dispatch, getState) => {
                 images: data.images,
                 price: data.price,
                 category: data.category,
-                posterQty: data.posterQty,
+                Qty: data.Qty,
                 qty
             }
         });

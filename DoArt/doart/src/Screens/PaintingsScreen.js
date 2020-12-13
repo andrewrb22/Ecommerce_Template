@@ -10,8 +10,7 @@ function PaintingsScreen(props) {
     const [images, setImage] = useState('');
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
-    const [original, setOriginal] = useState('');
-    const [posterQty, setPosterQty] = useState('');
+    const [Qty, setQty] = useState('');
     const paintList = useSelector(state => state.paintList);
     const { loading, paintings, error } = paintList;
 
@@ -49,8 +48,7 @@ function PaintingsScreen(props) {
         setPrice(paint.price);
         setImage(paint.images);
         setCategory(paint.category);
-        setOriginal(paint.original);
-        setPosterQty(paint.posterQty);
+        setQty(paint.Qty);
         setDescription(paint.description);
 
     }
@@ -62,7 +60,7 @@ function PaintingsScreen(props) {
         e.preventDefault();
         dispatch(savePaint({
             _id: id,
-            name, price, images, category, original, posterQty, description
+            name, price, images, category, Qty, description
         }));
 
 
@@ -122,17 +120,10 @@ function PaintingsScreen(props) {
                                 </input>
                             </li>
                             <li>
-                                <label htmlFor="original">
-                                    Original
-          </label>
-                                <input type="text" name="original" id="original" value={original} onChange={(e) => setOriginal(e.target.value)}>
-                                </input>
-                            </li>
-                            <li>
                                 <label htmlFor="posterQty">
-                                    Poster Qty
+                                    Posters Qty
           </label>
-                                <input type="text" name="posterQty" id="posterQty" value={posterQty} onChange={(e) => setPosterQty(e.target.value)}>
+                                <input type="text" name="posterQty" id="posterQty" value={Qty} onChange={(e) => setQty(e.target.value)}>
                                 </input>
                             </li>
                             <li>
