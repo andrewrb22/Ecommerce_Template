@@ -90,9 +90,9 @@ function PlaceOrderScreen(props) {
 
                                                 </div>
                                             </div>
-                                            <div className="cart-price">
-                                                ${item.price}
-                                            </div>
+                                            <div>
+                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                        </div>
                                         </li>
 
 
