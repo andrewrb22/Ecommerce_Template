@@ -10,6 +10,8 @@ import { useSelector } from 'react-redux';
 import RegisterScreen from './screens/RegisterScreen';
 import PaintingsScreen from './screens/PaintingsScreen';
 import ShippingScreen from './screens/ShippingScreen';
+import PaymentScreen from './screens/PaymentScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
 
 function App() {
 
@@ -53,6 +55,8 @@ function App() {
         </aside>
         <main className="main">
           <div className="content">
+          <Route path="/placeorder" component={PlaceOrderScreen} />
+          <Route path="/payment" component={PaymentScreen} />
           <Route path="/paintings" component={PaintingsScreen} />
           <Route path="/shipping" component={ShippingScreen} />
             <Route path="/paint/:id" component={PaintScreen} />

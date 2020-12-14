@@ -6,7 +6,7 @@ import CheckoutSteps from '../components/CheckoutSteps';
 
 function PaymentScreen(props) {
 
-    const [payment, setPayment] = useState('');
+    const [paymentMethod, setPaymentMethod] = useState('');
 
    
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function PaymentScreen(props) {
     const submitHandler = (e) => {
       e.preventDefault();
       dispatch(savePayment({paymentMethod}));
-      props.history.push('plaveorder')
+      props.history.push('placeorder')
     }
     return <div>
         <CheckoutSteps step1 step2 step3></CheckoutSteps>
@@ -28,42 +28,25 @@ function PaymentScreen(props) {
           <li>
             <h2>Payment </h2>
           </li>
+         <div>   
+            <li>
+          <input type="radio" name="paymentMethod" id="paymentMethod" value="paypal" onChange={(e) => setPaymentMethod(e.target.value)}>
+            </input>
+            <label htmlFor="paymentMethod">
+              Paypal
+            
+            </label>
+            
+          </li>
+          </div>
+          <li>
+          <button type="submit" className="button primary">
+                Continue
+              </button>
+          </li>
+      
+        
          
-          <li>
-            <label htmlFor="addres">
-              Address
-            </label>
-            <input type="text" name="addres" id="addres" onChange={(e) => setAddress(e.target.value)}>
-            </input>
-          </li>
-        
-          <li>
-            <label htmlFor="city">
-              City
-            </label>
-            <input type="text" name="city" id="city" onChange={(e) => setCity(e.target.value)}>
-            </input>
-          </li>
-        
-          <li>
-            <label htmlFor="country">
-              Country
-            </label>
-            <input type="text" name="country" id="country" onChange={(e) => setCountry(e.target.value)}>
-            </input>
-          </li>
-          <li>
-            <label htmlFor="postal">
-              Postal Code
-            </label>
-            <input type="text" name="postal" id="postal" onChange={(e) => setPostal(e.target.value)}>
-            </input>
-          </li>
-        
-        
-          <li>
-            <button type="submit" className="button primary">Continue</button>
-          </li>
   
         </ul>
       </form>

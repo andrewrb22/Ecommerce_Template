@@ -7,7 +7,7 @@ import { userRegisterReducer, userSigninReducer } from './reducers/userReducer.j
 
 const cartItems = cookie.getJSON("cartItems") || [];
 const userInfo = cookie.getJSON("userInfo") || null;
-const initialState= {cart: {cartItems}, userSignin: {userInfo}}
+const initialState= {cart: {cartItems, shipping:{}, payment:{}}, userSignin: {userInfo}}
 const reducer= combineReducers({
     paintList: paintListReducer,
     paintDetails: paintDetailsReducer,
