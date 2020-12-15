@@ -7,6 +7,7 @@ import paintRoute from './routes/paintRoute.js';
 import bodyParser from 'body-parser'
 
 import dotenv from 'dotenv';
+import orderRouter from './routes/orderRouter.js';
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", userRoute);
 app.use("/api/paint", paintRoute);
+app.use("/api/orders", orderRouter)
 
 // app.get("/api/paint/:id", (req,res) =>{
 //     const paintId = req.params.id;
