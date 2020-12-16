@@ -27,7 +27,10 @@ app.use(bodyParser.json());
 
 app.use("/api/users", userRoute);
 app.use("/api/paint", paintRoute);
-app.use("/api/order", orderRouter)
+app.use("/api/orders", orderRouter)
+app.get('/api/config/paypal', (req, res) => {
+    res.send(config.PAYPAL_CLIENT_ID || 'SB')
+});
 
 // app.get("/api/paint/:id", (req,res) =>{
 //     const paintId = req.params.id;

@@ -3,7 +3,7 @@ dotenv.config();
 
 export default {
     MONGODB_URL: process.env.MONGODB_URL || 'mongodb://localhost/DoArt',
-    JWT_SECRET: process.env.JWT_SECRET || 'ELSECRETO',
+    JWT_SECRET: process.env.JWT_SECRET || 'Secret',
    
 
 
