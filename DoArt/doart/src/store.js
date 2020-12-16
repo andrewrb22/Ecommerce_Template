@@ -4,7 +4,7 @@ import cookie from 'js-cookie';
 import {cartReducer} from './reducers/cartReducers';
 import {paintListReducer, paintDetailsReducer, paintSaveReducer, paintDeleteReducer} from './reducers/paintReducers'
 import { userRegisterReducer, userSigninReducer } from './reducers/userReducer.js';
-
+import {orderCreateReducer} from './reducers/orderReducers.js'
 const cartItems = cookie.getJSON("cartItems") || [];
 const userInfo = cookie.getJSON("userInfo") || null;
 const initialState= {cart: {cartItems, shipping:{}, payment:{}}, userSignin: {userInfo}}
@@ -16,6 +16,7 @@ const reducer= combineReducers({
     userRegister: userRegisterReducer,
     paintSave: paintSaveReducer,
     paintDelete: paintDeleteReducer,
+    orderCreate: orderCreateReducer,
 
 })
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
