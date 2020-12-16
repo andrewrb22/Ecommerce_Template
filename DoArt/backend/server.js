@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", userRoute);
 app.use("/api/paint", paintRoute);
-app.use("/api/orders", orderRouter)
+app.use("/api/order", orderRouter)
 
 // app.get("/api/paint/:id", (req,res) =>{
 //     const paintId = req.params.id;
