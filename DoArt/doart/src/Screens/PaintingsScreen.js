@@ -72,9 +72,9 @@ function PaintingsScreen(props) {
     return (
         <div className="content content-margined">
             <div className="product-header">
-                <h3> Paintings</h3>
+                <h3> Products</h3>
                 <button className="button primary" onClick={() => openModal({})}>
-                    Create New Painting
+                    Create New Products
         </button>
             </div>
             { modalVisible && (
@@ -84,7 +84,7 @@ function PaintingsScreen(props) {
                     <form onSubmit={submitHandler} >
                         <ul className="form-container">
                             <li>
-                                <h2>Create New Painting</h2>
+                                <h2>Create a New Product</h2>
                             </li>
                             <li>
                                 {laodingSave && <div> Loading...</div>}
@@ -121,7 +121,7 @@ function PaintingsScreen(props) {
                             </li>
                             <li>
                                 <label htmlFor="posterQty">
-                                    Posters Qty
+                                    Qty
           </label>
                                 <input type="text" name="posterQty" id="posterQty" value={Qty} onChange={(e) => setQty(e.target.value)}>
                                 </input>

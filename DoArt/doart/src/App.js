@@ -60,7 +60,7 @@ function App() {
           <div className="content">
           <Route path="/placeorder" component={PlaceOrderScreen} />
           <Route path="/payment" component={PaymentScreen} />
-          <Route path="/paintings" component={PaintingsScreen} />
+          <Route path="/products" component={PaintingsScreen} />
           <Route path="/shipping" component={ShippingScreen} />
             <Route path="/paint/:id" component={PaintScreen} />
             <Route path="/signin" component={SigninScreen}></Route>
