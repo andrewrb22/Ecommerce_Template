@@ -305,3 +305,7 @@ tbody>tr:nth-child(odd){
 .placeorder-actions-payment > div {
   width: 100%;
 }
+/*intro*/
+.intro{
+  background-color: purple;
+}

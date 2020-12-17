@@ -35,7 +35,7 @@ function App() {
             <button onClick={openMenu}>
               &#9776;
             </button>
-            <Link to="/">Company Name</Link>
+            <Link to="/intro">Bussiness Name</Link>
           </div>
           <div className="header-links">
             <a href="cart.html">Cart</a>
