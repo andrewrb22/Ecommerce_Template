@@ -13,6 +13,7 @@ import ShippingScreen from './screens/ShippingScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
+import CallToActionIntro from './screens/IntroScreen';
 
 function App() {
 
@@ -34,7 +35,7 @@ function App() {
             <button onClick={openMenu}>
               &#9776;
             </button>
-            <Link to="/">Carolina DoArt</Link>
+            <Link to="/">Company Name</Link>
           </div>
           <div className="header-links">
             <a href="cart.html">Cart</a>
@@ -47,12 +48,12 @@ function App() {
           </div>
         </header>
         <aside className="sidebar">
-          <h1>Painting Categories</h1>
+          <h1>Products</h1>
           <button className="sidebar-close-button" onClick={closeMenu}>X</button>
           <ul>
-            <li><h3>Portraits</h3></li>
-            <li><h3>Pets</h3></li>
-            <li><h3>Nature</h3></li>
+            <li><h3>Product 1</h3></li>
+            <li><h3>Product 2</h3></li>
+            <li><h3>Product 3</h3></li>
           </ul>
         </aside>
         <main className="main">
@@ -65,6 +66,7 @@ function App() {
             <Route path="/signin" component={SigninScreen}></Route>
             <Route path="/register" component={RegisterScreen}></Route>
             <Route path="/cart/:id?" component={CartScreen} />
+            <Route path="/intro" exact={true} component={CallToActionIntro} />
             <Route path="/order/:id" component={OrderScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
 

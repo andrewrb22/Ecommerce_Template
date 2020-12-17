@@ -27,7 +27,7 @@ body{
 .header{
   padding: 0.5rem;
   grid-area: header;
-  background-color: #2d83da;
+  background-color: #813cb9;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -50,7 +50,7 @@ body{
   grid-area:main;
 }
 .footer{
-  background-color: #2d83da;
+  background-color: #813cb9;
   color: #ffffff;
   display: flex;
   grid-area:footer;
@@ -58,7 +58,7 @@ body{
   align-items: center;
 }
 
-/*homescreen*/
+
 
 .paintings{
   display: flex;
@@ -75,7 +75,7 @@ a:hover{
 .paintings li{
   list-style-type: none;
   padding: 0;
-  flex: 0 1 34rem;
+  flex: 0 4 28rem;
   margin: 1rem;
   height: 30rem;
   border-bottom: .1rem rgba(80, 79, 148, 0.533) solid;
@@ -88,7 +88,7 @@ a:hover{
 
 }
 .paint-name{
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: bold;
 
 }
@@ -96,17 +96,17 @@ a:hover{
   margin-bottom: 1rem;
 }
 .paint-brand{
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: rgb(90, 89, 89);
 }
 .paint-price{
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: bold;
 }
 .paint-image{
   max-width: 24rem;
   max-height: 24rem;
-}
+} 
 
 .brand button{
   font-size: 3rem;
@@ -141,7 +141,7 @@ a:hover{
   top: 1.5rem;
 }
 /*paint details*/
-.details{
+/* .details{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -163,7 +163,7 @@ a:hover{
 .details-image{
   flex: 1 1 30rem;
  
-}
+} */
 
 /* Cart */
 

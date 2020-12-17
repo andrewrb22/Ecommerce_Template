@@ -12,6 +12,7 @@
     "dotenv": "^8.2.0",
     "js-cookie": "^2.2.1",
     "js-cookies": "^1.0.4",
+    "mdbreact": "^5.0.1",
     "mongoose": "^5.11.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
