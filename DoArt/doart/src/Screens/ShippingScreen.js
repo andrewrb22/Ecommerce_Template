@@ -49,7 +49,7 @@ function ShippingScreen(props) {
 
           <li>
             <label htmlFor="country">
-              Country
+              State
             </label>
             <input type="text" name="country" id="country" onChange={(e) => setCountry(e.target.value)}>
             </input>
