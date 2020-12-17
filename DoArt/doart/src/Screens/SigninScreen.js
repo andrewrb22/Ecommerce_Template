@@ -59,10 +59,10 @@ function SigninScreen(props) {
                     <button type="submit"  className="button primary">Signin</button>
                 </li>
                 <li>
-                    New to DoArt?
+                    New to Our Store?
         </li>
                 <li>
-                    <Link to={redirect === "/" ? "register": "register?redirect="+ redirect} className="button secondary text-center" >Create your DoArt account</Link>
+                    <Link to={redirect === "/" ? "register": "register?redirect="+ redirect} className="button secondary text-center" >Create Account</Link>
                 </li>
             </ul>
         </form>

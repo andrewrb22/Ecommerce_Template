@@ -59,14 +59,23 @@ function OrderScreen(props) {
               Payment Method: {order.payment.paymentMethod}
             </div>
             <div>
-              {order.isPaid ? "Paid at " + order.paidAt : "Not Paid."}
+              {order.isPaid ?(
+                <MessageBox variant="success">
+                  Paid at{order.paidAt}
+                </MessageBox>
+              ) : (
+                <MessageBox variant="danger">
+                  Not Paid
+                </MessageBox>
+              )
+              }
             </div>
           </div>
           <div>
             <ul className="cart-list-container">
               <li>
                 <h3>
-                  Shopping Cart
+                  Shopping Cartd."
           </h3>
                 <div>
                   Price
