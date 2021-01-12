@@ -41,7 +41,7 @@ class CallToActionIntro extends React.Component {
                                     Slogan or Mission Statemente!
                 </h5>
                                 <MDBBtn rounded className='btn-purple'>
-                                    <Link to='/' className=" text-white">Shop Now!</Link>
+                                    <Link to='/shop' className=" text-white">Shop Now!</Link>
                                 </MDBBtn>
                             </MDBCol>
                         </MDBRow>

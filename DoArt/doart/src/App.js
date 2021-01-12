@@ -35,7 +35,7 @@ function App() {
             <button onClick={openMenu}>
               &#9776;
             </button>
-            <Link to="/intro">Bussiness Name</Link>
+            <Link to="/">Bussiness Name</Link>
           </div>
           <div className="header-links">
             <a href="cart.html">Cart</a>
@@ -66,9 +66,9 @@ function App() {
             <Route path="/signin" component={SigninScreen}></Route>
             <Route path="/register" component={RegisterScreen}></Route>
             <Route path="/cart/:id?" component={CartScreen} />
-            <Route path="/intro" exact={true} component={CallToActionIntro} />
+            <Route path="/" exact={true} component={CallToActionIntro} />
             <Route path="/order/:id" component={OrderScreen} />
-            <Route path="/" exact={true} component={HomeScreen} />
+            <Route path="/shop" exact={true} component={HomeScreen} />
 
           </div>
 
