@@ -143,6 +143,7 @@ a:hover{
   align-items: flex-start;
   flex-wrap: wrap;
   padding: 1rem;
+  font-weight: bold;
 }
 .details-image{
   flex: 2 1 60rem;
@@ -153,13 +154,16 @@ a:hover{
 }
 .details-info{
   flex: 1 1 30rem;
+  font-weight: bold;
   padding-left: 2rem;
+  border: .1rem #000000 solid;
+  border-radius: 0.5rem;
+  background-color: rgb(176, 108, 202);
+  box-shadow: inset;
 }
 .details-action{
-  flex: 1 1 30rem;
-  border: .1rem #2d83da solid;
-  border-radius: 0.5rem;
-  background-color: #f16767;
+  flex: 1 2 30rem;
+  
   
 }
 .details-info ul, .details-action ul{

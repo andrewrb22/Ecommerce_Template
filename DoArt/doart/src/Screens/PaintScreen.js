@@ -24,7 +24,7 @@ function PaintScreen(props) {
 
     return <div>
         <div className="backtohome">
-            <Link to="/">Back to Home</Link>
+            <Link to="/shop">Back to Home</Link>
         </div>
         {loading ? <div>Loading... </div> :
             error ? <div>{error}</div> : (
@@ -36,25 +36,17 @@ function PaintScreen(props) {
                     <div className="details-info">
                         <ul>
                             <li>
-                                <h4>Name: {paint.name}</h4>
+                            <b> <h4>Name: {paint.name}</h4></b>
                             </li>
-                            <li> Collection:
+                            <li> Category: <b> 
                                 
-                              {paint.category}
+                              {paint.category}</b>
                             </li>
-                            <li className="bestseller"> BestSeller
-                        {paint.bestseller}
-                            </li>
+                       
                             <li>
                                 Price:<b> ${paint.price}</b>
                             </li>
-                        </ul>
-                    </div>
-                    <div className="details-action">
-                        <ul>
-                            <li>
-                                Price: <b>${paint.price} </b>
-                            </li>
+                           
                             <li>
                                 Status:{" "}
                                  {paint.Qty > 0 ? "In Stock" : "Out Of Stock"}
@@ -82,9 +74,14 @@ function PaintScreen(props) {
                                    )}
 
                             </li>
-
                         </ul>
                     </div>
+                    {/* <div className="details-action">
+                        <ul>
+                           
+
+                        </ul>
+                    </div> */}
 
                 </div>
 
