@@ -50,7 +50,7 @@ body{
   grid-area:main;
 }
 .footer{
-  background-color: #813cb9;
+  background-color: #3778da;
   color: #ffffff;
   display: flex;
   grid-area:footer;

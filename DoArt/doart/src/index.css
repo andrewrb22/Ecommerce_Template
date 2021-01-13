@@ -47,7 +47,7 @@ body{
   grid-area:main;
 }
 .footer{
-  background-color: #2d83da;
+  background-color: #2880d8;
   color: #ffffff;
   display: flex;
   grid-area:footer;
