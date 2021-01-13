@@ -3,6 +3,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {register} from '../actions/userActions.js';
 import { useHistory } from "react-router-dom";
+import {
+  
+  MDBMask,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBBtn,
+  MDBView,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBInput,
+  MDBAnimation
+} from 'mdbreact';
+
 
 function RegisterScreen(props) {
 
