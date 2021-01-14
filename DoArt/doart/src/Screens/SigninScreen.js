@@ -62,7 +62,7 @@ function SigninScreen(props) {
       className='white-text text-center text-md-left col-md-6 mt-xl-5 mb-5'
     >
       <h1 className='h1-responsive font-weight-bold'>
-        Sign up right now!
+      Sign in to your account
       </h1>
       <h1>
       {loading && <div> Loading...</div>}
@@ -83,7 +83,7 @@ function SigninScreen(props) {
         <MDBCard id='classic-card'>
           <MDBCardBody className='white-text'>
             <h3 className='text-center'>
-              <MDBIcon icon='user' /> Register:
+              <MDBIcon icon='user' /> Sign in:
             </h3>
             <hr className='hr-light' />
            
