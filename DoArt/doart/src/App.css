@@ -344,3 +344,16 @@ tbody>tr:nth-child(odd){
  label {
   color: #fff !important;
 }
+/* register*/
+
+#rePassword{
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+#name{
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}

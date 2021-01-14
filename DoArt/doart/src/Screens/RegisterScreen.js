@@ -118,7 +118,7 @@ function RegisterScreen(props) {
               icon='lock'
               id='rePassword' 
               name='rePassword'
-               onChange={(e) => setPassword(e.target.value)}
+               onChange={(e) => setRePassword(e.target.value)}
               type='rePassword'
             />
             <div className='text-center mt-4 black-text'>
