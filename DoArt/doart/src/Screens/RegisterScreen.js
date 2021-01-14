@@ -44,50 +44,100 @@ function RegisterScreen(props) {
       dispatch(register(name, email, password));
     }
     return <div className="form">
-      <form onSubmit={submitHandler} >
-        <ul className="form-container">
-          <li>
-            <h2>Create Account</h2>
-          </li>
-          <li>
-            {loading && <div>Loading...</div>}
-            {error && <div>{error}</div>}
-          </li>
-          <li>
-            <label htmlFor="name">
-              Name
-            </label>
-            <input type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
-            </input>
-          </li>
-          <li>
-            <label htmlFor="email">
-              Email
-            </label>
-            <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
-            </input>
-          </li>
-          <li>
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
-            </input>
-          </li>
-          <li>
-            <label htmlFor="rePassword">Re-Enter Password</label>
-            <input type="rePassword" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
-            </input>
-          </li>
-          <li>
-            <button type="submit" className="button primary">Register</button>
-          </li>
-          <li>
-            Already have an account?
-            <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Sign-In</Link>
-  
-          </li>
-  
-        </ul>
-      </form>
-    </div>
-  }
+ <MDBView onSubmit={submitHandler}>
+<MDBMask className='d-flex justify-content-center align-items-center gradient' />
+<MDBContainer
+  style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
+  className='mt-5  d-flex justify-content-center align-items-center'
+>
+  <MDBRow>
+    <MDBAnimation
+      type='fadeInLeft'
+      delay='.3s'
+      className='white-text text-center text-md-left col-md-6 mt-xl-5 mb-5'
+    >
+      <h1 className='h1-responsive font-weight-bold'>
+      Create an Account
+      </h1>
+      <h1>
+      {loading && <div> Loading...</div>}
+                    {error && <div> {error}</div>}
+      </h1>
+      <hr className='hr-light' />
+      <h6 className='mb-4'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
+        repellendus quasi fuga nesciunt dolorum nulla magnam veniam
+        sapiente, fugiat! Commodi sequi non animi ea dolor molestiae,
+        quisquam iste, maiores. Nulla.
+      </h6>
+      
+    </MDBAnimation>
+
+    <MDBCol md='6' xl='5' className='mb-4'>
+      <MDBAnimation type='fadeInRight' delay='.3s'>
+        <MDBCard id='classic-card'>
+          <MDBCardBody className='white-text'>
+            <h3 className='text-center'>
+              <MDBIcon icon='user' /> Register:
+            </h3>
+            <hr className='hr-light' />
+            <MDBInput
+            type='name'
+            name='name'
+            id='name'
+            onChange={(e) => setName(e.target.value)}
+              className='white-text'
+              iconClass='white-text'
+              label='Your Name'
+              icon='user'
+            />
+            <MDBInput
+            type='email'
+            name='email'
+            id='email'
+            onChange={(e) => setEmail(e.target.value)}
+              className='white-text'
+              iconClass='white-text'
+              label='Your email'
+              icon='envelope'
+            />
+            <MDBInput
+              className='white-text'
+              iconClass='white-text'
+              label='Your password'
+              icon='lock'
+              id='password' 
+              name='password'
+               onChange={(e) => setPassword(e.target.value)}
+              type='password'
+            />
+             <MDBInput
+              className='white-text'
+              iconClass='white-text'
+              label='Re-Enter Password'
+              icon='lock'
+              id='rePassword' 
+              name='rePassword'
+               onChange={(e) => setPassword(e.target.value)}
+              type='rePassword'
+            />
+            <div className='text-center mt-4 black-text'>
+              <MDBBtn color='indigo'
+              >Register</MDBBtn>
+              <hr className='hr-light' />
+              
+            </div>
+            <div>
+              <p>  Already have an account?</p>
+            <Link  to={redirect === "/" ? "signin" : "signin?redirect=" + redirect}className="text-center" > <MDBBtn color='indigo'
+              >Sign In</MDBBtn></Link>
+            </div>
+          </MDBCardBody>
+        </MDBCard>
+      </MDBAnimation>
+    </MDBCol>
+  </MDBRow>
+</MDBContainer>
+</MDBView>
+   </div>}
   export default RegisterScreen;
