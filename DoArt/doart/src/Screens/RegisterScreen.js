@@ -44,7 +44,7 @@ function RegisterScreen(props) {
       dispatch(register(name, email, password));
     }
     return <div className="form">
- <MDBView onSubmit={submitHandler}>
+ <MDBView id="view">>
 <MDBMask className='d-flex justify-content-center align-items-center gradient' />
 <MDBContainer
   style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
@@ -75,7 +75,7 @@ function RegisterScreen(props) {
 
     <MDBCol md='6' xl='5' className='mb-4'>
       <MDBAnimation type='fadeInRight' delay='.3s'>
-        <MDBCard id='classic-card'>
+        <MDBCard id='classic-card' onSubmit={submitHandler}>
           <MDBCardBody className='white-text'>
             <h3 className='text-center'>
               <MDBIcon icon='user' /> Register:
@@ -123,6 +123,7 @@ function RegisterScreen(props) {
             />
             <div className='text-center mt-4 black-text'>
               <MDBBtn color='indigo'
+              type='submit'
               >Register</MDBBtn>
               <hr className='hr-light' />
               
