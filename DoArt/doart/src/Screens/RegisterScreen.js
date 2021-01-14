@@ -88,7 +88,7 @@ function RegisterScreen(props) {
             onChange={(e) => setName(e.target.value)}
               className='white-text'
               iconClass='white-text'
-              label='Your Name'
+              label='Name'
               icon='user'
             />
             <MDBInput
@@ -98,13 +98,13 @@ function RegisterScreen(props) {
             onChange={(e) => setEmail(e.target.value)}
               className='white-text'
               iconClass='white-text'
-              label='Your email'
+              label='Email'
               icon='envelope'
             />
             <MDBInput
               className='white-text'
               iconClass='white-text'
-              label='Your password'
+              label='Password'
               icon='lock'
               id='password' 
               name='password'
