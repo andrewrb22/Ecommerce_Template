@@ -25,5 +25,8 @@ const register = (name, email, password) => async (dispatch) => {
     }
   }
   
+  const detailsUser = (userId) => async(dispatch, getState) =>{
+    
+  }
 
 export { signin, register };
