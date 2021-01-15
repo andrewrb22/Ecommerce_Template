@@ -43,4 +43,4 @@ try {
 
   }
 
-export { signin, register };
+export { signin, register, detailsUser };

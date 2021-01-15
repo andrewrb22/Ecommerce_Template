@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import cookie from 'js-cookie';
 import { cartReducer } from './reducers/cartReducers';
 import { paintListReducer, paintDetailsReducer, paintSaveReducer, paintDeleteReducer } from './reducers/paintReducers'
-import { userRegisterReducer, userSigninReducer } from './reducers/userReducer.js';
+import { userRegisterReducer, userSigninReducer,userDetailsReducer } from './reducers/userReducer.js';
 import { orderCreateReducer, orderDetailsReducer, orderPayReducer } from './reducers/orderReducers.js'
 
 
@@ -25,6 +25,7 @@ const reducer = combineReducers({
     orderCreate: orderCreateReducer,
     orderDetails: orderDetailsReducer,
     orderPay: orderPayReducer,
+    userDetails: userDetailsReducer,
 
 })
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
