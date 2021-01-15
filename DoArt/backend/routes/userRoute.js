@@ -55,5 +55,16 @@ router.post('/signin', async (req, res) => {
       res.send({ message: error.message });
     }
   });
+
+  router.get('/id:', async(req,res)=> {
+    const user = await User.findById(req.params.id);
+    if(user){
+      res.send(user);
+    }else{
+      res.status(404).send({message: 'User Not Found'});
+
+    }
+  });
+  
   
   export default router;
