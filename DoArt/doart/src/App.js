@@ -14,32 +14,35 @@ import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import CallToActionIntro from './screens/IntroScreen';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBDropdown,
-  MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
+import {
+  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBDropdown,
+  MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon
+} from "mdbreact";
+import ProfileScreen from './screens/ProfileScreen';
 
 function App() {
 
   const userSignin = useSelector(state => state.userSignin);
   const { userInfo } = userSignin;
 
-//   const toggleCollapse = collapseID => () =>
-//   this.setState(prevState => ({
-//   collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-// }));
-  
+  //   const toggleCollapse = collapseID => () =>
+  //   this.setState(prevState => ({
+  //   collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+  // }));
+
 
   return (
     <BrowserRouter>
       <div className="grid-container">
-      <MDBNavbar color="info-color" dark expand="md" >
-        <MDBNavbarBrand color="text-white">
-        <MDBNavLink className="waves-effect waves-light" to="/">
-        <strong className="white-text">Logo/Name</strong></MDBNavLink>
-        </MDBNavbarBrand>
-        {/* <MDBNavbarToggler onClick={this.toggleCollapse("navbarCollapse3")} />
+        <MDBNavbar color="info-color" dark expand="md" >
+          <MDBNavbarBrand color="text-white">
+            <MDBNavLink className="waves-effect waves-light" to="/">
+              <strong className="white-text">Logo/Name</strong></MDBNavLink>
+          </MDBNavbarBrand>
+          {/* <MDBNavbarToggler onClick={this.toggleCollapse("navbarCollapse3")} />
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.collapseID} navbar> */}
           <MDBNavbarNav right>
-           
+
             <MDBNavItem>
               <MDBNavLink className="waves-effect waves-light" to="#!">
                 <MDBIcon icon="shopping-cart" className="mr-1" />Cart</MDBNavLink>
@@ -51,17 +54,21 @@ function App() {
                 </MDBDropdownToggle>
                 <MDBDropdownMenu className="dropdown-default" right>
                   <MDBDropdownItem href="#!"> {
-              userInfo ? <Link to="/profile">{userInfo.name}</Link> :
-                <Link to="/signin"> Sign In</Link>
-            }
-</MDBDropdownItem>
+                    userInfo ? <Link to="/profile">{userInfo.name}</Link> :
+                      <Link to="/signin"> Sign In</Link>
+                  }
+                  </MDBDropdownItem>
+                  <MDBDropdownItem>
+                      <Link to="/Profile"> User Profile</Link>
+                  
+                  </MDBDropdownItem>
                   <MDBDropdownItem href="#!">Log out</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>
           </MDBNavbarNav>
-      
-      </MDBNavbar>
+
+        </MDBNavbar>
         {/* <header className="header">
           <div className="brand">
             <button onClick={openMenu}>
@@ -90,10 +97,10 @@ function App() {
         </aside> */}
         <main className="main">
           <div className="content">
-          <Route path="/placeorder" component={PlaceOrderScreen} />
-          <Route path="/payment" component={PaymentScreen} />
-          <Route path="/products" component={PaintingsScreen} />
-          <Route path="/shipping" component={ShippingScreen} />
+            <Route path="/placeorder" component={PlaceOrderScreen} />
+            <Route path="/payment" component={PaymentScreen} />
+            <Route path="/products" component={PaintingsScreen} />
+            <Route path="/shipping" component={ShippingScreen} />
             <Route path="/paint/:id" component={PaintScreen} />
             <Route path="/signin" component={SigninScreen}></Route>
             <Route path="/register" component={RegisterScreen}></Route>
@@ -101,12 +108,12 @@ function App() {
             <Route path="/" exact={true} component={CallToActionIntro} />
             <Route path="/order/:id" component={OrderScreen} />
             <Route path="/shop" exact={true} component={HomeScreen} />
-
+            <Route path="/profile" component={ProfileScreen}></Route>
           </div>
 
         </main>
         <footer className="footer" >
-          Copy Rights 
+          Copy Rights
        </footer>
       </div>
     </BrowserRouter>
