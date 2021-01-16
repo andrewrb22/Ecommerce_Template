@@ -19,6 +19,9 @@ import {
   MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon
 } from "mdbreact";
 import ProfileScreen from './screens/ProfileScreen';
+import PrivateRoute from "./components/PrivateRoute.js"
+
+
 
 function App() {
 
@@ -118,7 +121,9 @@ function App() {
             <Route path="/" exact={true} component={CallToActionIntro} />
             <Route path="/order/:id" component={OrderScreen} />
             <Route path="/shop" exact={true} component={HomeScreen} />
-            <Route path="/profile" component={ProfileScreen}></Route>
+            
+            
+            <PrivateRoute path="/profile" component={ProfileScreen}></PrivateRoute>
           </div>
 
         </main>
