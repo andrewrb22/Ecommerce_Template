@@ -37,6 +37,7 @@ export default function ProfileScreen() {
                                     type="text"
                                     placeholder="Enter Name"
                                     value={user.name}
+                                  
                                 ></input>
                             </div>
                             <div>

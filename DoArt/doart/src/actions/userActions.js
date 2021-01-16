@@ -29,8 +29,9 @@ const register = (name, email, password) => async (dispatch) => {
     dispatch({ type:USER_DETAILS_REQUEST, payload: userId});
     const {userSignin: {userInfo}} =getState();
 try {
-  const {data} = await Axios.get(`/api/users/ ${userId}`,{
-    headers: {Authorization: `Bearer ${userInfo.token}`}
+  const { data } = await Axios.get("/api/users/" + userId, {
+    headers:
+      { Authorization: 'Bearer ' + userInfo.token }
   });
   dispatch({type: USER_DETAILS_SUCCESS, payload: data})
 } catch (error) {
