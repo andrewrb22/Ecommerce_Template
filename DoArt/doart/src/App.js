@@ -121,12 +121,8 @@ function App() {
             <Route path="/" exact={true} component={CallToActionIntro} />
             <Route path="/order/:id" component={OrderScreen} />
             <Route path="/shop" exact={true} component={HomeScreen} />
-            
-            
-            <PrivateRoute
-             path="/profile"
-              component={ProfileScreen}
-              ></PrivateRoute>
+            <Route
+              path="/profile" component={ProfileScreen}></Route>
           </div>
 
         </main>
