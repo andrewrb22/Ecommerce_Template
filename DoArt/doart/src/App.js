@@ -123,7 +123,10 @@ function App() {
             <Route path="/shop" exact={true} component={HomeScreen} />
             
             
-            <PrivateRoute path="/profile" component={ProfileScreen}></PrivateRoute>
+            <PrivateRoute
+             path="/profile"
+              component={ProfileScreen}
+              ></PrivateRoute>
           </div>
 
         </main>
