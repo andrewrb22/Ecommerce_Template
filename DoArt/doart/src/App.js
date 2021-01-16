@@ -44,7 +44,7 @@ function App() {
           <MDBNavbarNav right>
 
             <MDBNavItem>
-              <MDBNavLink className="waves-effect waves-light" to="#!">
+              <MDBNavLink className="waves-effect waves-light" to="/cart">
                 <MDBIcon icon="shopping-cart" className="mr-1" />Cart</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
@@ -57,10 +57,20 @@ function App() {
                     userInfo ? <Link to="/profile">{userInfo.name}</Link> :
                       <Link to="/signin"> Sign In</Link>
                   }
+
                   </MDBDropdownItem>
                   <MDBDropdownItem>
-                      <Link to="/Profile"> User Profile</Link>
-                  
+                    {userInfo && userInfo.isAdmin && (
+                      <div className="dropdown">
+                        <a href="">Admin</a>
+                        <ul className="dropdown-content">
+                          <li>
+                            <Link to="/orders">Orders</Link>
+                            <Link to="/products">Products</Link>
+                          </li>
+                        </ul>
+                      </div>
+                    )}
                   </MDBDropdownItem>
                   <MDBDropdownItem href="#!">Log out</MDBDropdownItem>
                 </MDBDropdownMenu>
