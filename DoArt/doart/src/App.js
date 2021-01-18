@@ -6,7 +6,7 @@ import HomeScreen from './screens/HomeScreen';
 import PaintScreen from './screens/PaintScreen'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import SigninScreen from './screens/SigninScreen';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import RegisterScreen from './screens/RegisterScreen';
 import PaintingsScreen from './screens/PaintingsScreen';
 import ShippingScreen from './screens/ShippingScreen';
@@ -20,6 +20,7 @@ import {
 } from "mdbreact";
 import ProfileScreen from './screens/ProfileScreen';
 import PrivateRoute from "./components/PrivateRoute.js"
+import { signout } from './actions/userActions';
 
 
 
@@ -27,6 +28,11 @@ function App() {
 
   const userSignin = useSelector(state => state.userSignin);
   const { userInfo } = userSignin;
+  const dispatch = useDispatch();
+  const signoutHandler = ()=>{
+    dispatch(signout());
+
+  }
 
   //   const toggleCollapse = collapseID => () =>
   //   this.setState(prevState => ({
@@ -75,7 +81,9 @@ function App() {
                       </div>
                     )}
                   </MDBDropdownItem>
-                  <MDBDropdownItem href="#!">Log out</MDBDropdownItem>
+                  <MDBDropdownItem href="#!"
+                  onClick={signoutHandler}
+                  >Log out</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>
