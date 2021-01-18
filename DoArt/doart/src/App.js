@@ -29,10 +29,9 @@ function App() {
   const userSignin = useSelector(state => state.userSignin);
   const { userInfo } = userSignin;
   const dispatch = useDispatch();
-  const signoutHandler = ()=>{
+  const signoutHandler = () => {
     dispatch(signout());
-
-  }
+  };
 
   //   const toggleCollapse = collapseID => () =>
   //   this.setState(prevState => ({
@@ -81,7 +80,7 @@ function App() {
                       </div>
                     )}
                   </MDBDropdownItem>
-                  <MDBDropdownItem href="#!"
+                  <MDBDropdownItem href="#signout"
                   onClick={signoutHandler}
                   >Log out</MDBDropdownItem>
                 </MDBDropdownMenu>
