@@ -18,6 +18,10 @@ router.post("/", isAuth, async (req, res) => {
   const newOrderCreated = await newOrder.save();
   res.status(201).send({ message: "New Order Created", data: newOrderCreated });
 });
+router.get("/", isAuth, async (req, res) => {
+  const orders = await Order.find({}).populate('user');
+  res.send(orders);
+});
 router.get("/mine", isAuth, async (req, res) => {
   const orders = await Order.find({ user: req.user._id });
   res.send(orders);

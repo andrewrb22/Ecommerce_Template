@@ -18,7 +18,7 @@ function OrdersScreen(props) {
     return () => {
       //
     };
-  }, []);
+  }, [dispatch]);
 
   // const deleteHandler = (order) => {
   //   dispatch(deleteOrder(order._id));
