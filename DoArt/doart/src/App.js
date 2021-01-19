@@ -21,6 +21,7 @@ import {
 import ProfileScreen from './screens/ProfileScreen';
 import PrivateRoute from "./components/PrivateRoute.js"
 import { signout } from './actions/userActions';
+import OrdersScreen from './screens/OrderHistoryScreen.js';
 
 
 
@@ -127,6 +128,7 @@ function App() {
             <Route path="/cart/:id?" component={CartScreen} />
             <Route path="/" exact={true} component={CallToActionIntro} />
             <Route path="/order/:id" component={OrderScreen} />
+            <Route path="/orders" component={OrdersScreen}></Route>
             <Route path="/shop" exact={true} component={HomeScreen} />
             <Route
               path="/profile" component={ProfileScreen}></Route>
