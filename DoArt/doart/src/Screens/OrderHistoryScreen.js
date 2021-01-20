@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { listOrders } from '../actions/orderAction';
+import { MDBBtn} from 'mdbreact';
 
 
 function OrdersScreen(props) {
@@ -57,7 +58,9 @@ function OrdersScreen(props) {
                 <td>{order.isDelivered.toString()}</td>
                 <td>{order.deliveredAt}</td>
                 <td>
-                  <Link to={"/order/" + order._id} className="button secondary" >Details</Link>
+                  <Link to={"/order/" + order._id}  > 
+                  <MDBBtn color="primary">Details</MDBBtn>
+                     </Link>
                   {' '}
                   {/* <button type="button" onClick={() => deleteHandler(order)} className="button secondary">Delete</button> */}
                 </td>
