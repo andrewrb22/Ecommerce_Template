@@ -25,28 +25,32 @@ function ShippingScreen(props) {
   return <div>
     <CheckoutSteps step1 step2></CheckoutSteps>
 
-    <div className="form">
-      <form onSubmit={submitHandler} >
-        <p className="h2 text-center mb-4">Shipping</p>
-        <div className="black-text">
-          <MDBInput label="Address" icon="user" type="text" name="address" id="address" onChange={(e) => setAddress(e.target.value)}
-            success="right" />
-          <MDBInput label="City" icon="dollar-sign" name="city" id="city" onChange={(e) => setCity(e.target.value)}
-            success="right" />
-          <MDBInput label="State" icon="image" type="text" name="state" id="state" onChange={(e) => setstate(e.target.value)} success="right" />
-          <MDBInput label="Postal" icon="info-circle" type="text" name="postal" id="postal" onChange={(e) => setPostal(e.target.value)} />
+    <MDBContainer>
+      <MDBRow>
+        <MDBCol md="12">
+          <form onSubmit={submitHandler} >
+            <p className="h2 text-center mb-4">Shipping</p>
+            <div className="black-text">
+              <MDBInput label="Address" icon="address-card" type="text" name="address" id="address" onChange={(e) => setAddress(e.target.value)}
+                success="right" />
+              <MDBInput label="City" icon="map-marked-alt" name="city" id="city" onChange={(e) => setCity(e.target.value)}
+                success="right" />
+              <MDBInput label="State" icon="map-marker-alt" type="text" name="state" id="state" onChange={(e) => setstate(e.target.value)} success="right" />
+              <MDBInput label="Postal" icon="map-pin" type="text" name="postal" id="postal" onChange={(e) => setPostal(e.target.value)} />
 
 
 
 
 
-          <div>
-            <MDBBtn color="primary" type="submit" className="button primary">Continue</MDBBtn>
-          </div>
+              <div>
+                <MDBBtn color="primary" type="submit" className="button primary">Continue</MDBBtn>
+              </div>
 
-        </div>
-      </form>
-    </div>
+            </div>
+          </form>
+          </MDBCol>
+          </MDBRow>
+    </MDBContainer>
   </div>
 }
 export default ShippingScreen;
