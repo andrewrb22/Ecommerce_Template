@@ -31,12 +31,47 @@ function ShippingScreen(props) {
           <form onSubmit={submitHandler} >
             <p className="h2 text-center mb-4">Shipping</p>
             <div className="black-text">
-              <MDBInput label="Address" icon="address-card" type="text" name="address" id="address" onChange={(e) => setAddress(e.target.value)}
+            <label className="black-text h5">
+          Address
+        </label>
+              <MDBInput 
+              className="black-text"
+              label='Address'
+              icon="address-card"
+               type="text" 
+               name="address" 
+               id="address" onChange={(e) => setAddress(e.target.value)}
                 success="right" />
-              <MDBInput label="City" icon="map-marked-alt" name="city" id="city" onChange={(e) => setCity(e.target.value)}
+                  <label className="black-text h5">
+          City
+        </label>
+              <MDBInput 
+              label="City"
+               icon="map-marked-alt" 
+               name="city"
+                id="city"
+                 onChange={(e) => setCity(e.target.value)}
                 success="right" />
-              <MDBInput label="State" icon="map-marker-alt" type="text" name="state" id="state" onChange={(e) => setstate(e.target.value)} success="right" />
-              <MDBInput label="Postal" icon="map-pin" type="text" name="postal" id="postal" onChange={(e) => setPostal(e.target.value)} />
+                  <label className="black-text h5">
+          State
+        </label>
+              <MDBInput
+               label="State"
+               icon="map-marker-alt"
+                type="text"
+                 name="state"
+                  id="state"
+                   onChange={(e) => setstate(e.target.value)} success="right" />
+                     <label className="black-text h5">
+          Postal Code
+        </label>
+              <MDBInput
+               label="Postal"
+                icon="map-pin"
+                 type="text"
+                  name="postal"
+                   id="postal"
+                    onChange={(e) => setPostal(e.target.value)} />
 
 
 
