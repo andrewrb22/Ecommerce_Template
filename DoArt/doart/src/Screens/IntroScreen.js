@@ -1,32 +1,24 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import {
-    MDBCardBody,
-    MDBMask,
-    MDBRow,
-    MDBCol,
-    MDBJumbotron,
-    MDBBtn,
-    MDBView,
-    MDBInput,
-    MDBContainer,
-    MDBCardTitle,
-
-
-    MDBCardText,
-    MDBIcon
+  MDBMask,
+  MDBRow,
+  MDBCol,
+  MDBBtn,
+  MDBView,
+  MDBInput,
+  MDBContainer,
+  MDBIcon
 } from 'mdbreact';
-import { Link } from 'react-router-dom'
 import './CallToActionIntro.css';
 
 class CallToActionIntro extends React.Component {
 
 
-    render() {
-        return (
-            <div id='caltoaction'>
+  render() {
+    return (
+      <div id='caltoaction'>
 
-<MDBView
+        <MDBView
           src={'https://mdbootstrap.com/img/Photos/Others/images/76.jpg'}
           fixed
         >
@@ -43,13 +35,13 @@ class CallToActionIntro extends React.Component {
                 </h1>
                 <hr className='hr-light my-4' />
                 <h5 className='text-uppercase pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text font-weight-bold'>
-                 Mission Statement
+                  Mission Statement
                 </h5>
                 <MDBBtn
                   className='btn-indigo'
                   size='lg'
                   href='/shop'
-                  
+
                 >
                   Shop Now!
                 </MDBBtn>
@@ -58,79 +50,80 @@ class CallToActionIntro extends React.Component {
           </MDBContainer>
         </MDBView>
 
-                
 
-                <MDBContainer >
-      <h2 className="h1-responsive font-weight-bold text-center my-5" >
-        Contact Information
+
+        <MDBContainer >
+          <h2 className="h1-responsive font-weight-bold text-center my-5" >
+            Contact Information
       </h2>
 
-      <MDBRow>
-        <MDBCol md="9" className="md-0 mb-5">
-          <form>
-            <MDBRow>
-              <MDBCol md="6">
-                <div className="md-form mb-0">
-                  <MDBInput type="text" id="contact-name" label="Your name" />
-                </div>
-              </MDBCol>
-              <MDBCol md="6">
-                <div className="md-form mb-0">
-                  <MDBInput
-                    type="text"
-                    id="contact-email"
-                    label="Your email"
-                  />
-                </div>
-              </MDBCol>
-            </MDBRow>
-            <MDBRow>
-              <MDBCol md="12">
-                <div className="md-form mb-0">
-                  <MDBInput type="text" id="contact-subject" label="Subject" />
-                </div>
-              </MDBCol>
-            </MDBRow>
-            <MDBRow>
-              <MDBCol md="12">
-                <div className="md-form mb-0">
-                  <MDBInput
-                    type="textarea"
-                    id="contact-message"
-                    label="Your message"
-                  />
-                </div>
-              </MDBCol>
-            </MDBRow>
-          </form>
-          <div className="text-center text-md-left">
-            <MDBBtn color="purple" size="md">
-              Send
+          <MDBRow>
+            <MDBCol md="9" className="md-0 mb-5">
+              <form>
+                <MDBRow>
+                  <MDBCol md="6">
+                    <div className="md-form mb-0">
+                      <MDBInput type="text" id="contact-name" label="Your name" />
+                    </div>
+                  </MDBCol>
+                  <MDBCol md="6">
+                    <div className="md-form mb-0">
+                      <MDBInput
+                        type="text"
+                        id="contact-email"
+                        label="Your email"
+                        className="black-text"
+                      />
+                    </div>
+                  </MDBCol>
+                </MDBRow>
+                <MDBRow>
+                  <MDBCol md="12">
+                    <div className="md-form mb-0">
+                      <MDBInput type="text" id="contact-subject" label="Subject" />
+                    </div>
+                  </MDBCol>
+                </MDBRow>
+                <MDBRow>
+                  <MDBCol md="12">
+                    <div className="md-form mb-0">
+                      <MDBInput
+                        type="textarea"
+                        id="contact-message"
+                        label="Your message"
+                      />
+                    </div>
+                  </MDBCol>
+                </MDBRow>
+              </form>
+              <div className="text-center text-md-left">
+                <MDBBtn color="purple" size="md">
+                  Send
             </MDBBtn>
-          </div>
-        </MDBCol>
-        <MDBCol md="3" className="text-center">
-          <ul className="list-unstyled mb-0">
-            <li>
-              <MDBIcon icon="map-marker-alt" size="2x" className="purple-text" />
-              <p> Bussiness Location</p>
-            </li>
-            <li>
-              <MDBIcon icon="phone" size="2x" className="purple-text mt-4" />
-              <p>Bussiness Number</p>
-            </li>
-            <li>
-              <MDBIcon icon="envelope" size="2x" className="purple-text mt-4" />
-              <p>company@example.com</p>
-            </li>
-          </ul>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
-            </div>
+              </div>
+            </MDBCol>
+            <MDBCol md="3" className="text-center">
+              <ul className="list-unstyled mb-0">
+                <li>
+                  <MDBIcon icon="map-marker-alt" size="2x" className="purple-text" />
+                  <p> Bussiness Location</p>
+                </li>
+                <li>
+                  <MDBIcon icon="phone" size="2x" className="purple-text mt-4" />
+                  <p>Bussiness Number</p>
+                </li>
+                <li>
+                  <MDBIcon icon="envelope" size="2x" className="purple-text mt-4" />
+                  <p>company@example.com</p>
+                </li>
+              </ul>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </div>
 
-        );
-    }
+    );
+  }
 }
 
 export default CallToActionIntro;

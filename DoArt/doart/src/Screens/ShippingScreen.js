@@ -25,15 +25,13 @@ function ShippingScreen(props) {
   return <div>
     <CheckoutSteps step1 step2></CheckoutSteps>
 
-    <MDBContainer>
+    <MDBContainer className='shipping'>
       <MDBRow>
         <MDBCol md="12">
           <form onSubmit={submitHandler} >
             <p className="h2 text-center mb-4">Shipping</p>
             <div className="black-text">
-            <label className="black-text h5">
-          Address
-        </label>
+           
               <MDBInput 
               className="black-text"
               label='Address'
@@ -42,9 +40,7 @@ function ShippingScreen(props) {
                name="address" 
                id="address" onChange={(e) => setAddress(e.target.value)}
                 success="right" />
-                  <label className="black-text h5">
-          City
-        </label>
+            
               <MDBInput 
               label="City"
                icon="map-marked-alt" 
@@ -52,9 +48,7 @@ function ShippingScreen(props) {
                 id="city"
                  onChange={(e) => setCity(e.target.value)}
                 success="right" />
-                  <label className="black-text h5">
-          State
-        </label>
+           
               <MDBInput
                label="State"
                icon="map-marker-alt"
@@ -62,9 +56,7 @@ function ShippingScreen(props) {
                  name="state"
                   id="state"
                    onChange={(e) => setstate(e.target.value)} success="right" />
-                     <label className="black-text h5">
-          Postal Code
-        </label>
+             
               <MDBInput
                label="Postal"
                 icon="map-pin"

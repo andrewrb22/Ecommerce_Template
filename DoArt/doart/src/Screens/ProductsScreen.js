@@ -79,10 +79,10 @@ function PaintingsScreen(props) {
         </MDBBtn>
             </div>
             { modalVisible && (
-                <MDBContainer>
+                <MDBContainer >
                     <MDBRow>
                         <MDBCol md="12">
-                            <form onSubmit={submitHandler}>
+                            <form onSubmit={submitHandler} >
                                 <p className="h2 text-center mb-4">Create  New Product</p>
                                 <p>
 
@@ -90,7 +90,7 @@ function PaintingsScreen(props) {
                                     {errorSave && <div> {errorSave}</div>}
                                 </p>
 
-                                <div className="black-text">
+                                <div className="produtcs">
                                     <MDBInput label="Product Name" icon="user" type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)}
                                         success="right" />
                                     <MDBInput label="Price" icon="dollar-sign" type="text" name="price" id="price" value={price} onChange={(e) => setPrice(e.target.value)}

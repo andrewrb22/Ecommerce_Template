@@ -81,6 +81,7 @@ function RegisterScreen(props) {
               <MDBIcon icon='user' /> Register:
             </h3>
             <hr className='hr-light' />
+            <div className="register">
             <MDBInput
             type='name'
             name='name'
@@ -121,6 +122,7 @@ function RegisterScreen(props) {
                onChange={(e) => setRePassword(e.target.value)}
               type='rePassword'
             />
+            </div>
             <div className='text-center mt-4 black-text'>
               <MDBBtn color='indigo'
               type='submit'

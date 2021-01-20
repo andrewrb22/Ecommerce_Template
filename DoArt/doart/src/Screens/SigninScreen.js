@@ -86,7 +86,7 @@ function SigninScreen(props) {
                       <MDBIcon icon='user' /> Sign in:
             </h3>
                     <hr className='hr-light' />
-
+                  <div className="signin">
                     <MDBInput
                       type='email'
                       name='email'
@@ -107,6 +107,7 @@ function SigninScreen(props) {
                       onChange={(e) => setPassword(e.target.value)}
                       type='password'
                     />
+                    </div>
                     <div className='text-center mt-4 black-text'>
                       <MDBBtn color='indigo'
                         type='submit'

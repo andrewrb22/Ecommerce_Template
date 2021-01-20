@@ -341,8 +341,14 @@ tbody>tr:nth-child(odd){
   line-height: 1.7;
 }
 
- label {
+.signin label {
   color: #fff !important;
+}
+.register label {
+  color: #fff !important;
+}
+.products label{
+  color: black
 }
 /* register*/
 
