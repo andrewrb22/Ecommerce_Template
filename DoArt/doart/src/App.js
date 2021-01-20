@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom'
 import SigninScreen from './screens/SigninScreen';
 import { useDispatch, useSelector } from 'react-redux';
 import RegisterScreen from './screens/RegisterScreen';
-import PaintingsScreen from './screens/PaintingsScreen';
+import PaintingsScreen from './screens/ProductsScreen';
 import ShippingScreen from './screens/ShippingScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
@@ -56,8 +56,7 @@ function App() {
                 <MDBIcon icon="store" className="mr-1" />Store</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-
-              <MDBNavLink className="waves-effect waves-light" to="/cart">
+            <MDBNavLink className="waves-effect waves-light" to="/cart">
                 <MDBIcon icon="shopping-cart" className="mr-1" />Cart</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
