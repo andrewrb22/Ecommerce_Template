@@ -2,6 +2,7 @@ import React, {  useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { savePayment } from '../actions/cartActions'
 import CheckoutSteps from '../components/CheckoutSteps';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn,MDBIcon} from 'mdbreact'
 
 
 function PaymentScreen(props) {
@@ -21,36 +22,33 @@ function PaymentScreen(props) {
     }
     return <div>
         <CheckoutSteps step1 step2 step3></CheckoutSteps>
-    
-     <div className="form">
-      <form onSubmit={submitHandler} >
-        <ul className="form-container">
-          <li>
-            <h2>Payment </h2>
-          </li>
-         <div>   
-            <li>
-          <input type="radio" name="paymentMethod" id="paymentMethod" value="paypal" onChange={(e) => setPaymentMethod(e.target.value)}>
-            </input>
-            <label htmlFor="paymentMethod">
-              Paypal
+        <MDBContainer>
+                    <MDBRow>
+                        <MDBCol md="12">
+                            <div className="form">
+                               <form onSubmit={submitHandler} >
+                                    <p className="h2 text-center mb-4">Payment Option</p>
+                                     <div>   
             
-            </label>
+                                        <input  type="radio" name="paymentMethod" id="paymentMethod" value="paypal" onChange={(e) => setPaymentMethod(e.target.value)}>
+                                            </input>
+                                                 <label  htmlFor="paymentMethod" className="black-text  mb-4 h4">
+                                               
+                                                 <MDBIcon fab icon="cc-paypal" size="6x" />
+                                                 
             
-          </li>
-          </div>
-          <li>
-          <button type="submit" className="button primary">
-                Continue
-              </button>
-          </li>
-      
-        
-         
-  
-        </ul>
-      </form>
-    </div>
+       </label>
+                                      </div>
+          
+                                        <MDBBtn color="primary" type="submit" className="button primary">
+                                                      Continue
+                                          </MDBBtn>
+                                 </form>
+                              </div>
+                          </MDBCol>
+                      </MDBRow>
+                  </MDBContainer>
+
     </div>
   }
   export default  PaymentScreen;
