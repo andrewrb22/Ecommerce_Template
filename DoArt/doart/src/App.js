@@ -51,8 +51,12 @@ function App() {
           {/* <MDBNavbarToggler onClick={this.toggleCollapse("navbarCollapse3")} />
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.collapseID} navbar> */}
           <MDBNavbarNav right>
-
             <MDBNavItem>
+              <MDBNavLink className="waves-effect waves-light" to="/shop">
+                <MDBIcon icon="store" className="mr-1" />Store</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+
               <MDBNavLink className="waves-effect waves-light" to="/cart">
                 <MDBIcon icon="shopping-cart" className="mr-1" />Cart</MDBNavLink>
             </MDBNavItem>
@@ -75,6 +79,9 @@ function App() {
                         <ul className="dropdown-content">
                           <li>
                             <Link to="/orders">Orders</Link>
+
+                          </li>
+                          <li>
                             <Link to="/products">Products</Link>
                           </li>
                         </ul>
@@ -82,8 +89,8 @@ function App() {
                     )}
                   </MDBDropdownItem>
                   <MDBDropdownItem href="#signout"
-                  onClick={signoutHandler}
-                  >Log out</MDBDropdownItem>
+                    onClick={signoutHandler}
+                  >Sign out</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>
