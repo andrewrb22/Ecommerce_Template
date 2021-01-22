@@ -47,4 +47,4 @@ app.get('/api/config/paypal', (req, res) => {
 //     res.send(data.paintings);
 // })
 
-app.listen(8080, () => {console.log("Server started at http://localhost:8080") })
+app.listen(5000, () => {console.log("Server started at http://localhost:5000") })
