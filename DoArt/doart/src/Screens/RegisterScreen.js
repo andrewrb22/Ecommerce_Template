@@ -44,7 +44,7 @@ function RegisterScreen(props) {
       dispatch(register(name, email, password));
     }
     return <div className="form">
- <MDBView id="view">>
+ <MDBView id="view">
 <MDBMask className='d-flex justify-content-center align-items-center gradient' />
 <MDBContainer
   style={{ height: '100%', width: '100%', paddingTop: '10rem' }}
