@@ -11,14 +11,17 @@ import orderRouter from './routes/orderRouter.js';
 
 dotenv.config();
 
-const mongodbUrl= config.MONGODB_URL;
+// const mongodbUrl= config.MONGODB_URL;
 
-mongoose.connect(mongodbUrl ,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-}).catch(error => console.log(error.reason));
-
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/product',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    }
+  );
 
 
 
