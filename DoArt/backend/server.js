@@ -14,7 +14,7 @@ dotenv.config();
 // const mongodbUrl= config.MONGODB_URL;
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/product',
+    process.env.MONGODB_URI || 'mongodb://localhost/paint',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
