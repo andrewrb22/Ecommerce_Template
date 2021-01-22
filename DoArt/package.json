@@ -22,6 +22,7 @@
     "js-cookies": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.4",
+    "node": "^15.4.0",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
