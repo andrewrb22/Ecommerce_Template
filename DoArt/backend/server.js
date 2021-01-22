@@ -49,5 +49,8 @@ app.get('/api/config/paypal', (req, res) => {
 // app.get("/api/paint", (req,res) =>{
 //     res.send(data.paintings);
 // })
-
-app.listen(5000, () => {console.log("Server started at http://localhost:5000") })
+app.use(express.static(path.join(__dirname, '/../doart/build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/../doart/build/index.html`));
+});
+app.listen(config.PORT, () => { console.log('Server started at http://localhost:5000'); });
