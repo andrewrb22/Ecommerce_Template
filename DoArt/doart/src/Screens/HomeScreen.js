@@ -29,7 +29,7 @@ error? <div>{error}</div>:
 </p>
     <ul className="paintings">
         {
-             paintings.map(paint =>
+           paintings.map(paint =>
                 <li key={paint._id}>
                      <MDBCol lg='6' md='12' className='mb-lg-0 mb-6'>
                    <MDBCard wide ecommerce>
