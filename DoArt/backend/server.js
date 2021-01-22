@@ -1,5 +1,5 @@
 import express from 'express';
-import data from '../backend/data.js';
+import path from 'path';
 import config from './config.js';
 import mongoose from 'mongoose';
 import userRoute from './routes/userRoute.js';
@@ -9,12 +9,13 @@ import bodyParser from 'body-parser'
 import dotenv from 'dotenv';
 import orderRouter from './routes/orderRouter.js';
 
+
 dotenv.config();
 
-// const mongodbUrl= config.MONGODB_URL;
+const mongodbUrl= config.MONGODB_URL;
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/paint',
+    mongodbUrl,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
