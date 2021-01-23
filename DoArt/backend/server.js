@@ -53,7 +53,7 @@ app.get('/api/config/paypal', (req, res) => {
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, '/../doart/build')));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/../doart/build/index.html`));
+  res.sendFile(path.join(`${__dirname}/../doart/index.html`));
 });
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
