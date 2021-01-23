@@ -6,16 +6,15 @@ import userRoute from './routes/userRoute.js';
 import paintRoute from './routes/paintRoute.js';
 import bodyParser from 'body-parser'
 
-import dotenv from 'dotenv';
+
 import orderRouter from './routes/orderRouter.js';
 
 
-dotenv.config();
 
 
 
 mongoose.connect(  
-  process.env.MONGODB_URL || 'mongodb://localhost/DoArt',
+  process.env.MONGODB_URI || 'mongodb://localhost/DoArt',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
