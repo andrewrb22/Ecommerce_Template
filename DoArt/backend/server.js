@@ -15,7 +15,7 @@ dotenv.config();
 
 
 mongoose.connect(  
-  process.env.MONGODB_URL || 'mongodb+srv://andrewrb22:root@cluster0.satgc.mongodb.net/DoArt?retryWrites=true&w=majority',
+  process.env.MONGODB_URL || 'mongodb://localhost/DoArt',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
