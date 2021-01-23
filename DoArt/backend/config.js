@@ -9,7 +9,7 @@ export default {
 
 
 
-  PORT: process.env.PORT || 5000,
+ 
 
   PAYPAL_CLIENT_ID: process.env.PAYPAL_CLIENT_ID || 'sb',
   accessKeyId: process.env.accessKeyId || 'accessKeyId',
