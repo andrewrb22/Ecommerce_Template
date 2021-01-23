@@ -12,10 +12,10 @@ import orderRouter from './routes/orderRouter.js';
 
 dotenv.config();
 
-const mongodbUrl= config.MONGODB_URL;
 
-mongoose.connect(
-    mongodbUrl,
+
+mongoose.connect(  
+  process.env.MONGODB_URL || 'mongodb://localhost/paint',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
