@@ -14,7 +14,7 @@ import orderRouter from './routes/orderRouter.js';
 
 
 mongoose.connect(  
-  process.env.MONGODB_URI || 'mongodb://localhost/DoArt',
+  process.env.MONGODB_URI || 'mongodb+srv://andrewrb22:root@cluster0.satgc.mongodb.net/DoArt?retryWrites=true&w=majority',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
