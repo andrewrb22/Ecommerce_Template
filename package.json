@@ -7,8 +7,8 @@
   "scripts": {
     "start": "node DoArt/backend/server.js",
     "dev": "nodemon --watch  DoArt/backend --exec babel-node backend/server.js",
-    "build": "rm -rf dist && babel DoArt/backend  -d dist",
-    "heroku-postbuild": "cd DoArt/doart && npm install && npm run build "
+    "build": "rm -rf dist && babel DoArt/backend  -d dist && cd DoArt/doart && npm install && npm run build",
+    "heroku-postbuild": "npm run build && cd DoArt/doart && npm install && npm run build"
   },
   "type": "module",
   "repository": {
