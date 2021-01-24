@@ -51,10 +51,10 @@ app.get('/api/config/paypal', (req, res) => {
 // })
 
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, '/../DoArt/doart/build')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/../DoArt/doart/public/index.html`));
-});
+app.use(express.static(path.join(__dirname, '/DoArt/doart/build')));
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '/DoArt/doart/build/index.html'))
+);
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Serve at http://localhost:${port}`);
