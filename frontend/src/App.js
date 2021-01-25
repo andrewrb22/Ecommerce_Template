@@ -15,11 +15,11 @@ import PlaceOrderScreen from './Screens/PlaceOrderScreen.js';
 import OrderScreen from './Screens/OrderScreen.js';
 import CallToActionIntro from './Screens/IntroScreen.js';
 import {
-  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBDropdown,
+  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBDropdown,
   MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon
 } from "mdbreact";
 import ProfileScreen from './Screens/ProfileScreen.js';
-import PrivateRoute from "./components/PrivateRoute.js"
+// import PrivateRoute from "./components/PrivateRoute.js"
 import { signout } from './actions/userActions';
 import OrdersScreen from './Screens/OrderHistoryScreen.js';
 
@@ -74,7 +74,7 @@ function App() {
                   <MDBDropdownItem>
                     {userInfo && userInfo.isAdmin && (
                       <div className="dropdown">
-                        <a href="">Admin</a>
+                        <p>Admin</p>
                         <ul className="dropdown-content">
                           <li>
                             <Link to="/orders">Orders</Link>

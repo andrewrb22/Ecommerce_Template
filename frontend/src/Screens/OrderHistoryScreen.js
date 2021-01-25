@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { listOrders } from '../actions/orderAction';
@@ -7,7 +7,7 @@ import { MDBBtn} from 'mdbreact';
 
 function OrdersScreen(props) {
   const orderList = useSelector(state => state.orderList);
-  const { loading, orders, error } = orderList;
+  const { loading, orders, } = orderList;
 
   // const orderDelete = useSelector(state => state.orderDelete);
   // const { loading: loadingDelete, success: successDelete, error: errorDelete } = orderDelete;
