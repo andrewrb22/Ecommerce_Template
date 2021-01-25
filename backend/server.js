@@ -11,10 +11,10 @@ import orderRouter from './routes/orderRouter.js';
 
 
 
-
+const connect = "mongodb+srv://andrewrb22:database@cluster0.satgc.mongodb.net/DoArt?retryWrites=true&w=majority"
 
 mongoose.connect(  
-  process.env.MONGODB_URI || 'mongodb://localhost/DoArt',
+  connect,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
