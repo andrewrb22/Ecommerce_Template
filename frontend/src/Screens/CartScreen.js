@@ -98,4 +98,4 @@ function CartScreen(props) {
 
     </div>
 }
-export default CartScreen
+export default CartScreen;
