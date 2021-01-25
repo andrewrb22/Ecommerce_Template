@@ -2,18 +2,18 @@
 import React from 'react';
 import './App.css';
 import CartScreen from './Screens/CartScreen.js';
-import HomeScreen from './screens/HomeScreen';
-import PaintScreen from './screens/PaintScreen'
+import HomeScreen from './screens/HomeScreen.js';
+import PaintScreen from './screens/PaintScreen.js'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-import SigninScreen from './screens/SigninScreen';
+import SigninScreen from './screens/SigninScreen.js';
 import { useDispatch, useSelector } from 'react-redux';
-import RegisterScreen from './screens/RegisterScreen';
-import PaintingsScreen from './screens/ProductsScreen';
-import ShippingScreen from './screens/ShippingScreen';
-import PaymentScreen from './screens/PaymentScreen';
-import PlaceOrderScreen from './screens/PlaceOrderScreen';
-import OrderScreen from './screens/OrderScreen';
-import CallToActionIntro from './screens/IntroScreen';
+import RegisterScreen from './screens/RegisterScreen.js';
+import PaintingsScreen from './screens/ProductsScreen.js';
+import ShippingScreen from './screens/ShippingScreen.js';
+import PaymentScreen from './screens/PaymentScreen.js';
+import PlaceOrderScreen from './screens/PlaceOrderScreen.js';
+import OrderScreen from './screens/OrderScreen.js';
+import CallToActionIntro from './screens/IntroScreen.js';
 import {
   MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBDropdown,
   MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon
