@@ -10,11 +10,8 @@ import bodyParser from 'body-parser'
 import orderRouter from './routes/orderRouter.js';
 
 
-
-const connect = "mongodb+srv://andrewrb22:database@cluster0.satgc.mongodb.net/DoArt?retryWrites=true&w=majority"
-
 mongoose.connect(  
-  connect,
+  process.env.MONGODB_URL || 'mongodb://localhost/DoArt',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
