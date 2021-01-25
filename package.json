@@ -5,10 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node DoArt/backend/server.js",
-    "dev": "nodemon --watch  DoArt/backend --exec babel-node backend/server.js",
-    "build": "rm -rf dist && babel DoArt/backend  -d dist",
-    "heroku-postbuild": "npm run build && cd DoArt/doart && npm install"
+    "build": "cd frontend && npm install && npm run build",
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "type": "module",
   "repository": {
