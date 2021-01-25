@@ -1,7 +1,7 @@
 
 import React from 'react';
 import './App.css';
-import CartScreen from '../src/screens/CartScreen';
+import CartScreen from '../src/screens/CartScreen.js';
 import HomeScreen from './screens/HomeScreen';
 import PaintScreen from './screens/PaintScreen'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
