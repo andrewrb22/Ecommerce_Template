@@ -18,10 +18,10 @@ import {
   MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBDropdown,
   MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon
 } from "mdbreact";
-import ProfileScreen from './screens/ProfileScreen';
+import ProfileScreen from './Screens/ProfileScreen.js';
 import PrivateRoute from "./components/PrivateRoute.js"
 import { signout } from './actions/userActions';
-import OrdersScreen from './screens/OrderHistoryScreen.js';
+import OrdersScreen from './Screens/OrderHistoryScreen.js';
 
 
 
